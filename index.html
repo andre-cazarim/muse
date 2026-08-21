@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MUSE Design Studio</title>
+<title>Montador de Prompts</title>
 <script src="coi-serviceworker.js"></script>
 <link rel="icon" type="image/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB6ElEQVR4AZxTS0gVYRT+/n/CVroqoW6UEEHUpV2BiYEkFT1wEbgqcFWrFj2wCyGBweiFK1GUoisfuBMXiohuRL0IFxeKr+tCUPGF1xe6UK+POX7/4MgM6EKH8/3nnO88/sOZGQ0+82LnLktldFEqOpekYpxILYqdpnaIA2KXWCFMrGNJ7CjzH7MUepnFFlTcgZQq4AXJe8RVBZVBrQiLuExcIUzsJaBKmd+/IHaedqCKALiTUJ9HtGatZkWYuKiETYNbZ1U3VA/hf2XirDAEyDENsv0ZU8k1JPrn0ds9g9rYIFoax5Hom0Nr8wQmR1f8qVBAtmmQ5WftSC9+fe1B+Zcel07vHuBzSSdiZXE01gy7nHdwgkzTwGzY41AWK4AwsrO9f8J5xtv39z3T1ZwgwzRwHe+Ym97ExtqO5wa0ZbEkwMB9fWk/NzGS8rsBu/7fUMAXyJ6ZYMvPvim+i/K/T/Gn6RWsSxrm1p+/CxCte4bvdr4/lUtUW2wggStDN7NQ+Po2HuaF8O7DA3z6kYvnRXeQX5iDazcyAw3opLSCmqFxqnz89gjFJeFTY4bkrmf5KcuYcS4CBYxpgW5nsUOcVxyBatMhFRnQUGY7VYB0sUuS212n3iMOCSGMvUqdPM6p4t/45LqKxI8AAAD//1OfKlkAAAAGSURBVAMA5z2pgEME4KwAAAAASUVORK5CYII=">
 <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAEUElEQVR4AbxWe0yVZRj/vS93uYg56lCa1UYFRRopSzeU1souauZmZnOFulqtldkKcDmEBA6z8g+3Lm6VTbdqrNnNAjYZKWhqmsyiNDZNEM7hJqFxOXF5+r3UDuc741xg43x7nu99Lr/nfZ7v/b73eT8Nr0ukMLxNyua2Stk6h5QWOcT+iUNKK1vFftIh9gvky61S2s9xmDxCHiQPOKS0l/Zujn86pfS0U+xVDrHvIW+jvPaSlMwzc3ulg7uAdrHfTfA3TkT9NQKpV5B9gCoA8AyglirgHgA3AZihoKI5mljFMZwcBahpCiqR4xyBmifAgwByABRS/jQM+rQTkSzQfoB5FtA+StrcW2RHxhBwhPJycix5ikjFceJHWdBhhxRnUv5vBTSGihQQYwyhYOaKFoQVmVxapDwMUNkI8aWAJSK7I3QzGlOZ2ywNh5BSTAs679ARQFpI03okC0dYmhboFA9bSEWBpGhugxsnk1X4KR+tacIXexvQ2dY3mSkYI3O4AphFacJUtuUQXttYiZ2FR/DejuMTjjcBAjWbC4Ako0yEj/7QhG/Lz7lDGurbIWZJ3JbgBCZPImOmP3hXRx/efLUGGx7bj7rqi+ju6sdbW+ssIc0XelCwqRqff3QGec9V4f70PXh+9ddwDbC9WZBWRYAZLEAlWM1Wbfc7P6Hyq0ac/aUTNRXn8crT36Ot9W8riFr1gfPYVXIMtQcvor93EGdOtaGOMl3+aDoLGJnmDxEdE+52V+xvROPvXW49kDA4OBIIEskCFA8S37hnN8/HyrWpiEuI9A0ax5OSOhPZD908jsdiimYBYCu2GC1KfEIUckuykJ5xncUeSCnYeR88V88HXpkCfPjGzMdrL+HHQ81jhiAkpdjtg8CZAob94a5ecY3uAvCT9Yfz9r1dUIv+vkFvs7cupgCXt9VT73D2ovtyv6cpKLn+hBMf7/o5EHbAFOC3j95y6zVImO73O/WZxMT6dNLBs8DFAqSHsl9a/sRtuGu+DSvW3I6X31g4OnoHJM+Kx+aCRdi0dSHS5iZh/UsZeHhVijfMoiuoHhaAgBv7xfx78UH5CuTbF+PJjemjuyIhcWxVYuMi8e5ny7A6506s2ZCOD798HGb7WrKNo3AFulmA6hjH59ektcKi7NluzAu5mbDdEO/WgxU0VDunQkuwAZ6417dnIbc4C/b3H8CqdZP7p+EKtGhO2kSeMMXERmDlU6lYsjRgt/M59wikyfwP/OETMcWOMOhzGpCGKc7jc3rugt+0Df+cJeIqOdTUdy0GGrRShebMPBzq7Ozsdcw9xFfAlwBdyAIGyKEidkC9zSTT5na9yjsp0Fl8J99Rn3jjZ1AwJBDzkBWAXmxTecdMzGgBRjBF2FT+MhtciYLhBYDkKEixAHsVcJD6r8Q1U74CKFOkOcTMcWdOU/NL6qLPtHWzrU8xWRWAfeTt5PXkzF7EJSarLY8kq7wT+P/6FwAA//9F89pYAAAABklEQVQDALvlcZ+FrHbcAAAAAElFTkSuQmCC">
@@ -363,6 +363,14 @@
     background:var(--code-bg); border-radius:12px; padding:18px; margin-bottom:16px;
   }
   .cap-result-actions{ display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
+
+  /* miniaturas do carrossel de legendas */
+  .cap-thumb{
+    width:54px; height:54px; border-radius:8px; overflow:hidden; cursor:pointer;
+    border:2px solid transparent; transition:border-color .15s ease; flex-shrink:0;
+  }
+  .cap-thumb.active{ border-color:var(--accent); }
+  .cap-thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
 
 
   /* ============ CONVERSOR DE ARQUIVOS ============ */
@@ -2079,21 +2087,28 @@
   <header class="hero">
     <div class="eyebrow">Ferramenta</div>
     <h1 class="title">Construtor de Legendas</h1>
-    <p class="lede">Envie a arte ou o vídeo do post e receba uma legenda comercial, pronta pra publicar — a IA olha pro conteúdo e escreve com base no que vê.</p>
+    <p class="lede">Envie a arte, o carrossel ou o vídeo do post e receba uma legenda comercial pronta pra publicar — a IA olha pro conteúdo e escreve com base no que vê.</p>
   </header>
   <section class="section">
     <label class="split-upload" id="capUploadArea">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-      <div class="su-title">Arraste a imagem ou vídeo do post aqui, ou clique para escolher</div>
-      <div class="su-sub">JPG, PNG, WebP, MP4, MOV ou WebM</div>
-      <input type="file" id="capFileInput" accept="image/jpeg,image/png,image/webp,video/mp4,video/quicktime,video/webm,.mov">
+      <div class="su-title">Arraste aqui, ou clique para escolher</div>
+      <div class="su-sub">Até 10 imagens pra carrossel, ou 1 vídeo — JPG, PNG, WebP, MP4, MOV, WebM</div>
+      <input type="file" id="capFileInput" accept="image/jpeg,image/png,image/webp,video/mp4,video/quicktime,video/webm,.mov" multiple>
     </label>
 
     <div class="rmbg-workspace" id="capWorkspace">
       <div class="cap-layout">
         <div class="split-preview-box">
           <div id="capPreviewWrap" style="width:100%;">
-            <img id="capPreviewImg" alt="Prévia" style="max-width:100%; max-height:50vh; border-radius:10px; display:none; margin:0 auto;">
+            <!-- imagens do carrossel -->
+            <div id="capCarouselWrap" style="display:none;">
+              <div id="capCarouselMain" style="margin-bottom:10px; border-radius:10px; overflow:hidden; background:#111; aspect-ratio:1; display:flex; align-items:center; justify-content:center;">
+                <img id="capCarouselMainImg" alt="" style="width:100%; height:100%; object-fit:contain; display:block;">
+              </div>
+              <div id="capThumbs" style="display:flex; gap:6px; flex-wrap:wrap;"></div>
+            </div>
+            <!-- vídeo -->
             <video id="capPreviewVideo" style="max-width:100%; max-height:50vh; border-radius:10px; display:none; margin:0 auto;" controls></video>
           </div>
         </div>
@@ -5980,18 +5995,50 @@ function loadExternalScript(url){
   async function ensureFFmpeg(){
     if(ffmpegInstance) return ffmpegInstance;
 
-    // ffmpeg.wasm precisa de HTTPS com SharedArrayBuffer — não funciona por file://
     if(location.protocol === 'file:'){
       throw new Error('O compressor de vídeo precisa ser acessado via HTTPS (ex: seu site no GitHub Pages). Não funciona ao abrir o arquivo direto no navegador por file://.');
     }
 
-    statusEl.textContent = 'Baixando motor de compressão (só na primeira vez, ~30MB)...';
+    statusEl.textContent = 'Carregando módulos...';
 
     const ffmpegMod = await import('https://cdn.jsdelivr.net/npm/@ffmpeg/ffmpeg@0.12.10/+esm');
-    const utilMod = await import('https://cdn.jsdelivr.net/npm/@ffmpeg/util@0.12.1/+esm');
     const { FFmpeg } = ffmpegMod;
-    const { toBlobURL, fetchFile } = utilMod;
+    const { fetchFile } = await import('https://cdn.jsdelivr.net/npm/@ffmpeg/util@0.12.1/+esm');
 
+    // Baixa um arquivo com progresso real (fetch com stream)
+    async function downloadWithProgress(url, mimeType, label){
+      const resp = await fetch(url);
+      const total = parseInt(resp.headers.get('content-length') || '0', 10);
+      const reader = resp.body.getReader();
+      const chunks = [];
+      let received = 0;
+      while(true){
+        const { done, value } = await reader.read();
+        if(done) break;
+        chunks.push(value);
+        received += value.length;
+        if(total > 0){
+          const pct = Math.round(received/total*100);
+          const mb = (received/1024/1024).toFixed(1);
+          const totalMb = (total/1024/1024).toFixed(1);
+          statusEl.textContent = `${label}: ${mb} / ${totalMb} MB (${pct}%)`;
+        } else {
+          statusEl.textContent = `${label}: ${(received/1024/1024).toFixed(1)} MB...`;
+        }
+      }
+      const blob = new Blob(chunks, { type: mimeType });
+      return URL.createObjectURL(blob);
+    }
+
+    const coreBase = 'https://cdn.jsdelivr.net/npm/@ffmpeg/core@0.12.10/dist/esm';
+    const ffmpegBase = 'https://cdn.jsdelivr.net/npm/@ffmpeg/ffmpeg@0.12.10/dist/esm';
+
+    statusEl.textContent = 'Baixando motor (1/3)...';
+    const coreURL    = await downloadWithProgress(`${coreBase}/ffmpeg-core.js`,       'text/javascript',     'Motor de compressão (1/3)');
+    const wasmURL    = await downloadWithProgress(`${coreBase}/ffmpeg-core.wasm`,     'application/wasm',    'Motor de compressão (2/3)');
+    const workerURL  = await downloadWithProgress(`${ffmpegBase}/worker.js`,           'text/javascript',     'Motor de compressão (3/3)');
+
+    statusEl.textContent = 'Inicializando...';
     const ffmpeg = new FFmpeg();
     ffmpeg.on('progress', ({ progress })=>{
       if(progress >= 0 && progress <= 1){
@@ -5999,17 +6046,7 @@ function loadExternalScript(url){
       }
     });
 
-    const coreBaseURL = 'https://cdn.jsdelivr.net/npm/@ffmpeg/core@0.12.10/dist/esm';
-    const ffmpegBaseURL = 'https://cdn.jsdelivr.net/npm/@ffmpeg/ffmpeg@0.12.10/dist/esm';
-
-    // Baixa o core E o worker interno da biblioteca como blob (mesma origem),
-    // em vez de deixar o navegador tentar criar um Worker cross-origin direto
-    // do CDN — é exatamente isso que causava o SecurityError.
-    await ffmpeg.load({
-      coreURL: await toBlobURL(`${coreBaseURL}/ffmpeg-core.js`, 'text/javascript'),
-      wasmURL: await toBlobURL(`${coreBaseURL}/ffmpeg-core.wasm`, 'application/wasm'),
-      classWorkerURL: await toBlobURL(`${ffmpegBaseURL}/worker.js`, 'text/javascript'),
-    });
+    await ffmpeg.load({ coreURL, wasmURL, classWorkerURL: workerURL });
 
     ffmpegInstance = { ffmpeg, fetchFile };
     return ffmpegInstance;
@@ -6081,14 +6118,17 @@ function loadExternalScript(url){
 
 /* ============================================================
    CONSTRUTOR DE LEGENDAS — Gemini (visão + texto)
-   Reaproveita a mesma chave gratuita já usada no Gerador de Prompts.
+   Suporta múltiplas imagens (carrossel) ou 1 vídeo.
+   Reutiliza a mesma chave do Gerador de Prompts.
 ============================================================ */
 (function(){
   const uploadArea = document.getElementById('capUploadArea');
   const fileInput = document.getElementById('capFileInput');
   const workspace = document.getElementById('capWorkspace');
-  const previewImg = document.getElementById('capPreviewImg');
   const previewVideo = document.getElementById('capPreviewVideo');
+  const carouselWrap = document.getElementById('capCarouselWrap');
+  const carouselMainImg = document.getElementById('capCarouselMainImg');
+  const thumbsEl = document.getElementById('capThumbs');
   const brandInput = document.getElementById('capBrandInput');
   const ctaInput = document.getElementById('capCtaInput');
   const contextInput = document.getElementById('capContextInput');
@@ -6098,55 +6138,84 @@ function loadExternalScript(url){
   if(!uploadArea) return;
 
   const CAPTION_MODEL = 'gemini-3.6-flash';
-  let mediaKind = null; // 'image' | 'video'
-  let visionBase64 = null; // sempre uma imagem (frame extraído se for vídeo), sem o prefixo data:
+
+  let mediaKind = null; // 'images' | 'video'
+  // lista de { base64, mime, url } — uma por imagem de carrossel
+  let imageItems = [];
+  let visionBase64 = null; // frame do vídeo
   let visionMime = 'image/jpeg';
 
-  function frameFromVideo(videoEl){
-    return new Promise((resolve)=>{
-      const canvas = document.createElement('canvas');
-      canvas.width = videoEl.videoWidth;
-      canvas.height = videoEl.videoHeight;
-      const ctx = canvas.getContext('2d');
-      ctx.drawImage(videoEl, 0, 0, canvas.width, canvas.height);
-      resolve(canvas.toDataURL('image/jpeg', 0.88));
+  function toBase64(file){
+    return new Promise((resolve, reject)=>{
+      const r = new FileReader();
+      r.onload = ()=> resolve(r.result.split(',')[1]);
+      r.onerror = reject;
+      r.readAsDataURL(file);
     });
   }
 
-  function loadFile(file){
-    const isImage = file.type.startsWith('image/');
-    const isVideo = file.type.startsWith('video/');
-    if(!isImage && !isVideo){ alert('Envie uma imagem ou um vídeo.'); return; }
+  function showCarousel(items){
+    carouselWrap.style.display = 'block';
+    previewVideo.style.display = 'none';
+    carouselMainImg.src = items[0].url;
+    thumbsEl.innerHTML = '';
+    items.forEach((item, i)=>{
+      const div = document.createElement('div');
+      div.className = 'cap-thumb' + (i===0?' active':'');
+      div.innerHTML = `<img src="${item.url}" alt="">`;
+      div.addEventListener('click', ()=>{
+        carouselMainImg.src = item.url;
+        thumbsEl.querySelectorAll('.cap-thumb').forEach(t=>t.classList.remove('active'));
+        div.classList.add('active');
+      });
+      thumbsEl.appendChild(div);
+    });
+  }
+
+  async function loadFiles(fileList){
+    const images = Array.from(fileList).filter(f=>f.type.startsWith('image/'));
+    const videos = Array.from(fileList).filter(f=>f.type.startsWith('video/'));
+
+    if(images.length === 0 && videos.length === 0){
+      alert('Envie imagens (JPG/PNG/WebP) ou um vídeo (MP4/MOV/WebM).');
+      return;
+    }
+    if(videos.length > 0 && images.length > 0){
+      alert('Envie só imagens OU só um vídeo, não os dois juntos.');
+      return;
+    }
 
     resultArea.style.display = 'none';
     resultArea.innerHTML = '';
     uploadArea.style.display = 'none';
     workspace.classList.add('active');
 
-    if(isImage){
-      mediaKind = 'image';
-      previewVideo.style.display = 'none';
-      previewImg.style.display = 'block';
-      const url = URL.createObjectURL(file);
-      previewImg.src = url;
-      const reader = new FileReader();
-      reader.onload = ()=>{
-        visionBase64 = reader.result.split(',')[1];
-        visionMime = file.type;
-      };
-      reader.readAsDataURL(file);
+    if(images.length > 0){
+      mediaKind = 'images';
+      const limited = images.slice(0, 10);
+      imageItems = await Promise.all(limited.map(async f=>({
+        base64: await toBase64(f),
+        mime: f.type,
+        url: URL.createObjectURL(f),
+      })));
+      showCarousel(imageItems);
     } else {
       mediaKind = 'video';
-      previewImg.style.display = 'none';
-      previewVideo.style.display = 'block';
+      const file = videos[0];
       const url = URL.createObjectURL(file);
       previewVideo.src = url;
+      carouselWrap.style.display = 'none';
+      previewVideo.style.display = 'block';
       previewVideo.addEventListener('loadeddata', async function onReady(){
         previewVideo.removeEventListener('loadeddata', onReady);
-        // pula pra ~25% do vídeo pra pegar um frame mais representativo que o primeiro
         const seekTo = Math.min(previewVideo.duration * 0.25, 2);
         const doExtract = async ()=>{
-          const dataUrl = await frameFromVideo(previewVideo);
+          const canvas = document.createElement('canvas');
+          canvas.width = previewVideo.videoWidth;
+          canvas.height = previewVideo.videoHeight;
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(previewVideo, 0, 0);
+          const dataUrl = canvas.toDataURL('image/jpeg', 0.88);
           visionBase64 = dataUrl.split(',')[1];
           visionMime = 'image/jpeg';
         };
@@ -6163,43 +6232,54 @@ function loadExternalScript(url){
     }
   }
 
-  fileInput.addEventListener('change', ()=>{ if(fileInput.files[0]) loadFile(fileInput.files[0]); });
+  fileInput.addEventListener('change', ()=>{ if(fileInput.files.length) loadFiles(fileInput.files); });
   uploadArea.addEventListener('click', e=>{ if(e.target.tagName!=='INPUT') fileInput.click(); });
   ['dragenter','dragover'].forEach(ev=> uploadArea.addEventListener(ev, e=>{ e.preventDefault(); uploadArea.classList.add('dragover'); }));
   ['dragleave','drop'].forEach(ev=> uploadArea.addEventListener(ev, e=>{ e.preventDefault(); uploadArea.classList.remove('dragover'); }));
-  uploadArea.addEventListener('drop', e=>{ const f=e.dataTransfer.files[0]; if(f) loadFile(f); });
+  uploadArea.addEventListener('drop', e=>{ if(e.dataTransfer.files.length) loadFiles(e.dataTransfer.files); });
 
   resetBtn.addEventListener('click', ()=>{
-    mediaKind = null; visionBase64 = null;
+    mediaKind = null; imageItems = []; visionBase64 = null;
     fileInput.value = '';
     uploadArea.style.display = '';
     workspace.classList.remove('active');
     resultArea.style.display = 'none';
     resultArea.innerHTML = '';
-    previewImg.src = ''; previewVideo.src = '';
+    previewVideo.src = '';
+    carouselWrap.style.display = 'none';
   });
 
-  function buildStylePrompt(){
+  function buildPrompt(){
     const brand = brandInput.value.trim();
     const cta = ctaInput.value.trim();
     const context = contextInput.value.trim();
+    const isCarousel = mediaKind === 'images' && imageItems.length > 1;
 
-    let p = `Você é um redator publicitário especialista em legendas de Instagram pra negócios. Olhe com atenção pra imagem enviada (se for de um vídeo, é um frame representativo dele) e escreva UMA legenda pronta pra publicar, em português do Brasil.
+    let p = `Você é um redator publicitário especialista em legendas de Instagram pra negócios.`;
+    if(isCarousel){
+      p += ` Analise as ${imageItems.length} imagens deste carrossel (enviadas em sequência) e escreva UMA legenda única pra publicar junto com esse carrossel, em português do Brasil. A legenda deve fazer sentido pro conjunto das imagens.`;
+    } else {
+      p += ` Olhe com atenção pra imagem (ou frame de vídeo) enviada e escreva UMA legenda pronta pra publicar, em português do Brasil.`;
+    }
+
+    p += `
 
 Regras de estilo, sem exceção:
 - Tom comercial, atrativo, dinâmico e elegante — nunca robótico ou genérico.
 - Comece com um gancho forte nas primeiras palavras, que prenda atenção.
-- Desenvolva o valor/benefício real que aquilo entrega pra quem vê, com linguagem natural de quem entende do assunto.
-- Use emojis com naturalidade ao longo do texto (não just no fim), sem exagerar.
+- Desenvolva o valor/benefício real que aquilo entrega pra quem vê, com linguagem natural.
+- Use emojis com naturalidade ao longo do texto (não só no fim), sem exagerar.
 - Termine com uma chamada pra ação clara.
 - Pode usar 2 a 4 parágrafos curtos, com quebra de linha entre eles.
-- PROIBIDO usar construções típicas de texto gerado por IA, como "não é apenas X, é Y", "mais do que X, Y é...", "no mundo atual", "em suma", "por fim", ou qualquer fórmula de contraste batida do tipo "não se trata de X, mas de Y".
-- PROIBIDO qualquer texto de abertura tipo "Aqui está a legenda:" — devolva SÓ a legenda, pronta pra copiar e colar.`;
+- PROIBIDO usar: "não é apenas X, é Y", "mais do que X", "no mundo atual", "em suma", "por fim", ou qualquer fórmula de contraste batida.
+- PROIBIDO qualquer texto de abertura tipo "Aqui está a legenda:" — devolva SÓ a legenda.`;
 
-    if(brand) p += `\n- O nome da marca/negócio é "${brand}" — mencione ele naturalmente se fizer sentido.`;
-    if(cta) p += `\n- A chamada pra ação final deve ser baseada nisso: "${cta}".`;
-    if(context) p += `\n- Contexto adicional sobre esse post: ${context}`;
-
+    if(brand) p += `
+- Nome da marca: "${brand}" — mencione naturalmente se fizer sentido.`;
+    if(cta) p += `
+- CTA final baseado em: "${cta}".`;
+    if(context) p += `
+- Contexto: ${context}`;
     return p;
   }
 
@@ -6207,14 +6287,14 @@ Regras de estilo, sem exceção:
     resultArea.style.display = 'block';
     resultArea.innerHTML = `
       <p style="font-size:13.5px; color:var(--ink-soft); line-height:1.6; margin-bottom:14px;">
-        Pra gerar legendas, cada pessoa usa sua própria chave gratuita do Google (a mesma que já usa pra gerar imagem no Gerador de Prompts — se já configurou lá, é a mesma).
+        Pra gerar legendas, cada pessoa usa sua própria chave gratuita do Google (mesma do Gerador de Prompts — se já configurou lá, não precisa de novo).
       </p>
       <div class="key-input-row">
         <input type="text" id="capKeyInput" placeholder="Cole sua chave aqui (começa com AIza...)">
         <button class="generate-btn" id="capKeySaveBtn" type="button">Salvar</button>
       </div>
       <div class="img-gen-note">
-        Não tem uma chave ainda? <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">Crie uma grátis no Google AI Studio ↗</a>
+        Não tem? <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">Crie grátis no Google AI Studio ↗</a>
       </div>
     `;
     document.getElementById('capKeySaveBtn').addEventListener('click', ()=>{
@@ -6228,17 +6308,17 @@ Regras de estilo, sem exceção:
     });
   }
 
-  function renderCapLoading(){
+  function renderLoading(){
     resultArea.style.display = 'block';
     resultArea.innerHTML = `
       <div style="display:flex; align-items:center; gap:14px;">
         <div class="img-gen-spinner"></div>
-        <span style="font-size:13px; color:var(--ink-soft);">Analisando a mídia e escrevendo a legenda...</span>
+        <span style="font-size:13px; color:var(--ink-soft);">Analisando e escrevendo a legenda...</span>
       </div>
     `;
   }
 
-  function renderCapError(message){
+  function renderError(message){
     resultArea.style.display = 'block';
     resultArea.innerHTML = `
       <p style="color:#E36B6B; font-size:13.5px; line-height:1.6;">${message}</p>
@@ -6251,7 +6331,7 @@ Regras de estilo, sem exceção:
     document.getElementById('capChangeKeyBtn').addEventListener('click', ()=>{ clearGeminiKey(); renderKeySetup(); });
   }
 
-  function renderCapResult(text){
+  function renderResult(text){
     resultArea.style.display = 'block';
     resultArea.innerHTML = `
       <div class="cap-result-text" id="capResultText">${escapeHtml(text)}</div>
@@ -6272,52 +6352,53 @@ Regras de estilo, sem exceção:
   }
 
   async function runCaptionGeneration(){
-    if(!visionBase64){ alert('Aguarde a mídia terminar de carregar e tente de novo.'); return; }
+    if(mediaKind === 'images' && imageItems.length === 0){ alert('Aguarde as imagens carregarem.'); return; }
+    if(mediaKind === 'video' && !visionBase64){ alert('Aguarde o vídeo terminar de carregar.'); return; }
     const key = getSavedGeminiKey();
     if(!key){ renderKeySetup(); return; }
 
-    renderCapLoading();
+    renderLoading();
     try{
+      // monta as partes: prompt de texto + uma ou mais imagens
+      const parts = [{ text: buildPrompt() }];
+      if(mediaKind === 'images'){
+        imageItems.forEach(item=>{
+          parts.push({ inline_data: { mime_type: item.mime, data: item.base64 } });
+        });
+      } else {
+        parts.push({ inline_data: { mime_type: visionMime, data: visionBase64 } });
+      }
+
       const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${CAPTION_MODEL}:generateContent?key=${encodeURIComponent(key)}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          contents: [{
-            parts: [
-              { text: buildStylePrompt() },
-              { inline_data: { mime_type: visionMime, data: visionBase64 } }
-            ]
-          }]
-        })
+        body: JSON.stringify({ contents: [{ parts }] })
       });
       const data = await res.json();
 
       if(!res.ok){
         const apiMsg = (data && data.error && data.error.message) ? data.error.message : `Erro HTTP ${res.status}`;
         if(res.status === 400 && /API key not valid/i.test(apiMsg)){
-          renderCapError('Essa chave não é válida. Confere se copiou certinho, ou gera uma nova.');
+          renderError('Essa chave não é válida. Confere se copiou certinho.');
         } else if(res.status === 429){
-          renderCapError('Cota gratuita esgotada por agora (renova diariamente). Tenta de novo mais tarde.');
+          renderError('Cota gratuita esgotada por agora (renova diariamente). Tenta de novo mais tarde.');
         } else {
-          renderCapError(`Erro do Google: ${escapeAttr(apiMsg)}`);
+          renderError(`Erro do Google: ${escapeAttr(apiMsg)}`);
         }
         return;
       }
 
-      const parts = data?.candidates?.[0]?.content?.parts || [];
-      const textPart = parts.find(p=>p.text);
+      const textPart = (data?.candidates?.[0]?.content?.parts||[]).find(p=>p.text);
       const reason = data?.candidates?.[0]?.finishReason;
       if(!textPart){
-        if(reason === 'SAFETY' || reason === 'PROHIBITED_CONTENT'){
-          renderCapError('O Gemini recusou gerar essa legenda por política de conteúdo.');
-        } else {
-          renderCapError('O Gemini não devolveu texto dessa vez. Tenta de novo.');
-        }
+        renderError(reason==='SAFETY'||reason==='PROHIBITED_CONTENT'
+          ? 'O Gemini recusou gerar essa legenda por política de conteúdo.'
+          : 'O Gemini não devolveu texto dessa vez. Tenta de novo.');
         return;
       }
-      renderCapResult(textPart.text.trim());
+      renderResult(textPart.text.trim());
     }catch(e){
-      renderCapError('Falha de conexão (Failed to fetch). Verifica sua internet e tenta de novo.');
+      renderError('Falha de conexão. Verifica sua internet e tenta de novo.');
     }
   }
 
