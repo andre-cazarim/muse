@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MUSE Dseign Studio</title>
+<title>Montador de Prompts</title>
 <link rel="icon" type="image/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB6ElEQVR4AZxTS0gVYRT+/n/CVroqoW6UEEHUpV2BiYEkFT1wEbgqcFWrFj2wCyGBweiFK1GUoisfuBMXiohuRL0IFxeKr+tCUPGF1xe6UK+POX7/4MgM6EKH8/3nnO88/sOZGQ0+82LnLktldFEqOpekYpxILYqdpnaIA2KXWCFMrGNJ7CjzH7MUepnFFlTcgZQq4AXJe8RVBZVBrQiLuExcIUzsJaBKmd+/IHaedqCKALiTUJ9HtGatZkWYuKiETYNbZ1U3VA/hf2XirDAEyDENsv0ZU8k1JPrn0ds9g9rYIFoax5Hom0Nr8wQmR1f8qVBAtmmQ5WftSC9+fe1B+Zcel07vHuBzSSdiZXE01gy7nHdwgkzTwGzY41AWK4AwsrO9f8J5xtv39z3T1ZwgwzRwHe+Ym97ExtqO5wa0ZbEkwMB9fWk/NzGS8rsBu/7fUMAXyJ6ZYMvPvim+i/K/T/Gn6RWsSxrm1p+/CxCte4bvdr4/lUtUW2wggStDN7NQ+Po2HuaF8O7DA3z6kYvnRXeQX5iDazcyAw3opLSCmqFxqnz89gjFJeFTY4bkrmf5KcuYcS4CBYxpgW5nsUOcVxyBatMhFRnQUGY7VYB0sUuS212n3iMOCSGMvUqdPM6p4t/45LqKxI8AAAD//1OfKlkAAAAGSURBVAMA5z2pgEME4KwAAAAASUVORK5CYII=">
 <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAEUElEQVR4AbxWe0yVZRj/vS93uYg56lCa1UYFRRopSzeU1souauZmZnOFulqtldkKcDmEBA6z8g+3Lm6VTbdqrNnNAjYZKWhqmsyiNDZNEM7hJqFxOXF5+r3UDuc741xg43x7nu99Lr/nfZ7v/b73eT8Nr0ukMLxNyua2Stk6h5QWOcT+iUNKK1vFftIh9gvky61S2s9xmDxCHiQPOKS0l/Zujn86pfS0U+xVDrHvIW+jvPaSlMwzc3ulg7uAdrHfTfA3TkT9NQKpV5B9gCoA8AyglirgHgA3AZihoKI5mljFMZwcBahpCiqR4xyBmifAgwByABRS/jQM+rQTkSzQfoB5FtA+StrcW2RHxhBwhPJycix5ikjFceJHWdBhhxRnUv5vBTSGihQQYwyhYOaKFoQVmVxapDwMUNkI8aWAJSK7I3QzGlOZ2ywNh5BSTAs679ARQFpI03okC0dYmhboFA9bSEWBpGhugxsnk1X4KR+tacIXexvQ2dY3mSkYI3O4AphFacJUtuUQXttYiZ2FR/DejuMTjjcBAjWbC4Ako0yEj/7QhG/Lz7lDGurbIWZJ3JbgBCZPImOmP3hXRx/efLUGGx7bj7rqi+ju6sdbW+ssIc0XelCwqRqff3QGec9V4f70PXh+9ddwDbC9WZBWRYAZLEAlWM1Wbfc7P6Hyq0ac/aUTNRXn8crT36Ot9W8riFr1gfPYVXIMtQcvor93EGdOtaGOMl3+aDoLGJnmDxEdE+52V+xvROPvXW49kDA4OBIIEskCFA8S37hnN8/HyrWpiEuI9A0ax5OSOhPZD908jsdiimYBYCu2GC1KfEIUckuykJ5xncUeSCnYeR88V88HXpkCfPjGzMdrL+HHQ81jhiAkpdjtg8CZAob94a5ecY3uAvCT9Yfz9r1dUIv+vkFvs7cupgCXt9VT73D2ovtyv6cpKLn+hBMf7/o5EHbAFOC3j95y6zVImO73O/WZxMT6dNLBs8DFAqSHsl9a/sRtuGu+DSvW3I6X31g4OnoHJM+Kx+aCRdi0dSHS5iZh/UsZeHhVijfMoiuoHhaAgBv7xfx78UH5CuTbF+PJjemjuyIhcWxVYuMi8e5ny7A6506s2ZCOD798HGb7WrKNo3AFulmA6hjH59ektcKi7NluzAu5mbDdEO/WgxU0VDunQkuwAZ6417dnIbc4C/b3H8CqdZP7p+EKtGhO2kSeMMXERmDlU6lYsjRgt/M59wikyfwP/OETMcWOMOhzGpCGKc7jc3rugt+0Df+cJeIqOdTUdy0GGrRShebMPBzq7Ozsdcw9xFfAlwBdyAIGyKEidkC9zSTT5na9yjsp0Fl8J99Rn3jjZ1AwJBDzkBWAXmxTecdMzGgBRjBF2FT+MhtciYLhBYDkKEixAHsVcJD6r8Q1U74CKFOkOcTMcWdOU/NL6qLPtHWzrU8xWRWAfeTt5PXkzF7EJSarLY8kq7wT+P/6FwAA//9F89pYAAAABklEQVQDALvlcZ+FrHbcAAAAAElFTkSuQmCC">
 <link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,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">
@@ -168,6 +168,223 @@
   .paleta-swatch .ps-hex{ font-family:var(--mono); font-size:13.5px; font-weight:600; }
   .paleta-swatch .ps-copied{ margin-left:auto; font-size:11px; color:var(--accent); opacity:0; transition:opacity .15s ease; }
   .paleta-swatch.copied .ps-copied{ opacity:1; }
+
+  /* ============ CONSTRUTOR DE PALETA ============ */
+  .palette-builder-grid{
+    display:grid; grid-template-columns:repeat(5, 1fr); gap:10px;
+  }
+  @media (max-width:860px){ .palette-builder-grid{ grid-template-columns:repeat(2,1fr); } }
+  .pb-swatch{
+    position:relative; border-radius:16px; height:220px;
+    display:flex; flex-direction:column; align-items:center; justify-content:flex-end;
+    padding:16px; cursor:pointer; transition:transform .2s ease;
+    border:1px solid rgba(255,255,255,.08);
+  }
+  .pb-swatch:hover{ transform:translateY(-3px); }
+  .pb-swatch .pb-lock{
+    position:absolute; top:12px; right:12px; width:32px; height:32px; border-radius:50%;
+    background:rgba(0,0,0,.35); backdrop-filter:blur(4px); border:1px solid rgba(255,255,255,.25);
+    display:flex; align-items:center; justify-content:center; cursor:pointer; transition:all .15s ease;
+  }
+  .pb-swatch .pb-lock:hover{ background:rgba(0,0,0,.55); }
+  .pb-swatch.locked .pb-lock{ background:var(--accent); border-color:var(--accent); }
+  .pb-swatch .pb-lock svg{ width:14px; height:14px; }
+  .pb-swatch .pb-hex{
+    font-family:var(--mono); font-size:13.5px; font-weight:700;
+    background:rgba(0,0,0,.32); backdrop-filter:blur(4px); padding:6px 12px; border-radius:100px;
+  }
+  @media (max-width:640px){ .pb-swatch{ height:150px; } }
+
+  /* ============ SIMULADOR DE GRID ============ */
+  .grid-sim-preview{
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:3px;
+    max-width:520px; margin:0 auto; background:var(--bg-card); padding:3px; border-radius:8px;
+  }
+  .grid-sim-preview.cols-2{ grid-template-columns:repeat(2, 1fr); }
+  .grid-sim-item{
+    position:relative; aspect-ratio:4/5; overflow:hidden; cursor:grab; border-radius:2px;
+  }
+  .grid-sim-item.dragging{ opacity:.4; }
+  .grid-sim-item.drag-over{ outline:2px solid var(--accent); outline-offset:-2px; }
+  .grid-sim-item img{ width:100%; height:100%; object-fit:cover; display:block; pointer-events:none; }
+  .grid-sim-item .gs-remove{
+    position:absolute; top:6px; right:6px; width:22px; height:22px; border-radius:50%;
+    background:rgba(0,0,0,.6); color:#fff; border:none; display:flex; align-items:center; justify-content:center;
+    font-size:13px; cursor:pointer; opacity:0; transition:opacity .15s ease;
+  }
+  .grid-sim-item:hover .gs-remove{ opacity:1; }
+
+  /* ============ MOCKUP DE POST ============ */
+  .mockup-layout{ display:grid; grid-template-columns:1fr 260px; gap:28px; align-items:start; }
+  @media (max-width:800px){ .mockup-layout{ grid-template-columns:1fr; } }
+  .mockup-preview-box{ display:flex; justify-content:center; padding:30px 0; }
+
+  /* Moldura externa do celular */
+  .mockup-phone{
+    position:relative; width:240px; background:#050505; border-radius:38px;
+    padding:12px; box-shadow:0 30px 70px rgba(0,0,0,.6); border:2px solid #2a2a2a;
+    overflow:hidden;
+  }
+  .mockup-phone-notch{
+    position:absolute; top:12px; left:50%; transform:translateX(-50%); width:72px; height:16px;
+    background:#050505; border-radius:0 0 12px 12px; z-index:10;
+  }
+
+  /* Tela do celular */
+  .mockup-phone-inner{
+    background:#fff; border-radius:26px; overflow:hidden;
+    display:flex; flex-direction:column;
+  }
+
+  /* Status bar */
+  .mkp-status-bar{
+    background:#fff; padding:16px 12px 3px; display:flex; align-items:center; justify-content:space-between;
+    font-size:8px; font-family:sans-serif; color:#111; font-weight:600;
+  }
+  .mkp-status-bar .mkp-time{ font-size:9px; }
+  .mkp-status-icons{ display:flex; gap:3px; align-items:center; }
+
+  /* Header do post */
+  .mkp-post-header{
+    background:#fff; padding:5px 8px; display:flex; align-items:center; gap:6px;
+    border-bottom:1px solid #efefef;
+  }
+  .mkp-avatar{
+    width:24px; height:24px; border-radius:50%; flex-shrink:0;
+    background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
+    display:flex; align-items:center; justify-content:center; padding:1.5px;
+  }
+  .mkp-avatar-inner{
+    width:100%; height:100%; border-radius:50%; background:var(--accent);
+    display:flex; align-items:center; justify-content:center;
+    font-size:8px; font-weight:800; color:#1a1a1a; font-family:sans-serif;
+    overflow:hidden;
+  }
+  .mkp-avatar-inner img{ width:100%; height:100%; object-fit:cover; border-radius:50%; }
+  .mkp-username{ flex:1; font-size:9px; font-weight:700; color:#111; font-family:sans-serif; line-height:1.2; }
+  .mkp-username small{ display:block; font-size:7.5px; color:#8e8e8e; font-weight:400; }
+  .mkp-more{ font-size:14px; color:#111; font-family:sans-serif; }
+
+  /* Imagem — aspecto depende do estilo */
+  .mkp-image-wrap{ background:#111; flex:1; position:relative; overflow:hidden; }
+  .mkp-image-wrap img{ width:100%; height:100%; display:block; object-fit:cover; }
+  .mockup-phone.style-feed .mkp-image-wrap{ aspect-ratio:4/5; }
+  .mockup-phone.style-story .mkp-image-wrap,
+  .mockup-phone.style-reels .mkp-image-wrap{ aspect-ratio:9/16; max-height:400px; }
+
+  /* Story/Reels: sem ações embaixo, tem barra de progresso em cima */
+  .mkp-story-bar{ display:none; background:rgba(0,0,0,.5); padding:8px 8px 2px; gap:3px; }
+  .mkp-story-bar .mkp-bar{ flex:1; height:2px; border-radius:2px; background:rgba(255,255,255,.4); }
+  .mkp-story-bar .mkp-bar.done{ background:#fff; }
+  .mockup-phone.style-story .mkp-story-bar,
+  .mockup-phone.style-reels .mkp-story-bar{ display:flex; position:absolute; top:0; left:0; right:0; z-index:2; }
+  .mockup-phone.style-story .mkp-page-dots,
+  .mockup-phone.style-reels .mkp-page-dots,
+  .mockup-phone.style-story .mkp-actions,
+  .mockup-phone.style-reels .mkp-actions,
+  .mockup-phone.style-story .mkp-likes,
+  .mockup-phone.style-reels .mkp-likes,
+  .mockup-phone.style-story .mkp-caption,
+  .mockup-phone.style-reels .mkp-caption,
+  .mockup-phone.style-story .mkp-comment-bar,
+  .mockup-phone.style-reels .mkp-comment-bar{ display:none; }
+  .mockup-phone.style-story .mkp-post-header,
+  .mockup-phone.style-reels .mkp-post-header{
+    position:absolute; top:24px; left:0; right:0; z-index:3;
+    background:transparent; border:none;
+  }
+  .mockup-phone.style-story .mkp-username,
+  .mockup-phone.style-reels .mkp-username{ color:#fff; }
+  .mockup-phone.style-story .mkp-more,
+  .mockup-phone.style-reels .mkp-more{ color:#fff; }
+
+  /* Reels: barra de controles embaixo */
+  .mkp-reels-footer{
+    display:none; position:absolute; bottom:0; left:0; right:0; z-index:3;
+    padding:12px 8px 8px; background:linear-gradient(transparent, rgba(0,0,0,.6));
+  }
+  .mkp-reels-footer .mkp-rf-user{ font-size:8.5px; font-weight:700; color:#fff; font-family:sans-serif; margin-bottom:3px; }
+  .mkp-reels-footer .mkp-rf-caption{ font-size:8px; color:rgba(255,255,255,.85); font-family:sans-serif; }
+  .mockup-phone.style-reels .mkp-reels-footer{ display:block; }
+
+  /* Ações (coração, comentário, etc.) */
+  .mkp-actions{
+    background:#fff; padding:6px 8px 3px; display:flex; align-items:center; gap:8px;
+  }
+  .mkp-actions svg{ width:16px; height:16px; color:#111; }
+  .mkp-actions-right{ margin-left:auto; }
+  .mkp-likes{
+    background:#fff; padding:0 8px 2px; font-size:8px; font-weight:700; color:#111; font-family:sans-serif;
+  }
+  .mkp-caption{
+    background:#fff; padding:0 8px 5px; font-size:7.5px; color:#111; font-family:sans-serif; line-height:1.4;
+  }
+  .mkp-caption b{ font-weight:700; }
+
+  /* Barra de comentário */
+  .mkp-comment-bar{
+    background:#fff; padding:4px 8px 7px; display:flex; align-items:center; gap:5px;
+    border-top:1px solid #efefef;
+  }
+  .mkp-comment-avatar{
+    width:18px; height:18px; border-radius:50%; background:#ccc; flex-shrink:0;
+  }
+  .mkp-comment-input{
+    flex:1; height:16px; border:1px solid #dbdbdb; border-radius:100px;
+    font-size:7px; padding:0 6px; color:#999; font-family:sans-serif;
+    display:flex; align-items:center;
+  }
+
+  /* Indicador de páginas */
+  .mkp-page-dots{
+    background:#fff; display:flex; justify-content:center; gap:3px; padding:2px 0 3px;
+  }
+  .mkp-dot{ width:4px; height:4px; border-radius:50%; background:#0095f6; }
+  .mkp-dot.inactive{ background:#dbdbdb; }
+
+  .text-field{
+    width:100%; box-sizing:border-box; background:var(--code-bg); border:1px solid var(--line);
+    border-radius:10px; color:var(--ink); font-family:var(--font-body); outline:none; transition:border-color .15s ease;
+  }
+  .text-field:focus{ border-color:var(--accent); }
+  .text-field::placeholder{ color:var(--ink-faint); }
+  .mockup-controls .field-label{ display:block; margin-bottom:10px; }
+
+  /* ============ CONSTRUTOR DE LEGENDAS ============ */
+  .cap-layout{ display:grid; grid-template-columns:1fr 340px; gap:24px; align-items:start; }
+  @media (max-width:900px){ .cap-layout{ grid-template-columns:1fr; } }
+  .cap-result{
+    margin-top:28px; background:var(--bg-card); border:1px solid var(--line); border-radius:16px; padding:22px;
+  }
+  .cap-result-text{
+    font-size:14.5px; line-height:1.7; white-space:pre-wrap; color:var(--ink);
+    background:var(--code-bg); border-radius:12px; padding:18px; margin-bottom:16px;
+  }
+  .cap-result-actions{ display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
+
+
+  /* ============ CONVERSOR DE ARQUIVOS ============ */
+  .conv-file-info{
+    display:flex; align-items:center; gap:12px; background:var(--bg-card); border:1px solid var(--line);
+    border-radius:14px; padding:14px 16px; margin-bottom:18px; font-size:13px; color:var(--ink-soft);
+  }
+  .conv-file-info b{ color:var(--ink); }
+  .conv-format-row{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+  .conv-result-item{
+    display:flex; align-items:center; gap:12px; background:var(--bg-card); border:1px solid var(--line);
+    border-radius:14px; padding:12px 14px; margin-bottom:8px;
+  }
+  .conv-result-item img{ width:44px; height:44px; object-fit:cover; border-radius:8px; flex-shrink:0; }
+  .conv-result-item .cri-name{ flex:1; font-size:13px; }
+  .conv-result-item a{ text-decoration:none; }
+
+  /* ============ COMPRESSOR DE VÍDEO ============ */
+  .vc-layout{ display:grid; grid-template-columns:1fr 320px; gap:24px; align-items:start; }
+  @media (max-width:900px){ .vc-layout{ grid-template-columns:1fr; } }
+  #vcSizePresets{ margin-bottom:6px; }
+
+
+
 
   /* ============ VERIFICADOR DE CONTRASTE ============ */
   .contraste-layout{ display:grid; grid-template-columns:320px 1fr; gap:24px; align-items:start; }
@@ -1155,6 +1372,7 @@
       <div class="dropdown-menu" id="imageDropdownMenu">
         <button class="dropdown-option" data-section="cortarimagem">Cortar Imagem</button>
         <button class="dropdown-option" data-section="removerfundo">Remover Fundo</button>
+        <button class="dropdown-option" data-section="conversor">Conversor de Arquivos</button>
       </div>
     </div>
 
@@ -1165,7 +1383,30 @@
       </button>
       <div class="dropdown-menu" id="colorDropdownMenu">
         <button class="dropdown-option" data-section="paleta">Extrator de Paleta</button>
+        <button class="dropdown-option" data-section="construtorpaleta">Construtor de Paleta</button>
         <button class="dropdown-option" data-section="contraste">Verificador de Contraste</button>
+      </div>
+    </div>
+
+    <div class="topnav-dropdown" id="videoDropdown">
+      <button class="topnav-item dropdown-trigger" id="videoDropdownTrigger" type="button">
+        Vídeo
+        <svg class="caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5L6 8l3.5-3.5"/></svg>
+      </button>
+      <div class="dropdown-menu" id="videoDropdownMenu">
+        <button class="dropdown-option" data-section="compressorvideo">Compressor de Vídeo</button>
+      </div>
+    </div>
+
+    <div class="topnav-dropdown" id="socialDropdown">
+      <button class="topnav-item dropdown-trigger" id="socialDropdownTrigger" type="button">
+        Social Media
+        <svg class="caret" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5L6 8l3.5-3.5"/></svg>
+      </button>
+      <div class="dropdown-menu" id="socialDropdownMenu">
+        <button class="dropdown-option" data-section="legendas">Construtor de Legendas</button>
+        <button class="dropdown-option" data-section="gridsim">Simulador de Grid</button>
+        <button class="dropdown-option" data-section="mockup">Mockup de Post</button>
       </div>
     </div>
   </div>
@@ -1216,6 +1457,11 @@
           <div class="hc-title">Remover Fundo</div>
           <div class="hc-desc">Remove o fundo de uma imagem automaticamente, sem sair do navegador.</div>
         </button>
+        <button class="home-card" data-section="conversor" type="button">
+          <div class="hc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></div>
+          <div class="hc-title">Conversor de Arquivos</div>
+          <div class="hc-desc">HEIC pra JPG, PDF pra imagem e outros formatos — direto no navegador.</div>
+        </button>
       </div>
     </div>
 
@@ -1227,10 +1473,47 @@
           <div class="hc-title">Extrator de Paleta</div>
           <div class="hc-desc">Suba uma imagem e puxe as cores dominantes dela, prontas em hex pra copiar.</div>
         </button>
+        <button class="home-card" data-section="construtorpaleta" type="button">
+          <div class="hc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div>
+          <div class="hc-title">Construtor de Paleta</div>
+          <div class="hc-desc">Gere paletas harmônicas do zero — complementar, análoga, tríade — com cores travadas.</div>
+        </button>
         <button class="home-card" data-section="contraste" type="button">
           <div class="hc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 18a6 6 0 0 0 0-12z" fill="currentColor" stroke="none"/></svg></div>
           <div class="hc-title">Verificador de Contraste</div>
           <div class="hc-desc">Confira se sua combinação de cores passa nas regras de acessibilidade (WCAG).</div>
+        </button>
+      </div>
+    </div>
+
+    <div class="home-group">
+      <div class="home-group-title">Vídeo</div>
+      <div class="home-grid">
+        <button class="home-card" data-section="compressorvideo" type="button">
+          <div class="hc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
+          <div class="hc-title">Compressor de Vídeo</div>
+          <div class="hc-desc">Reduz o peso de um vídeo até um tamanho máximo que você escolher, direto no navegador.</div>
+        </button>
+      </div>
+    </div>
+
+    <div class="home-group">
+      <div class="home-group-title">Social Media</div>
+      <div class="home-grid">
+        <button class="home-card" data-section="legendas" type="button">
+          <div class="hc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><line x1="7" y1="8" x2="17" y2="8"/><line x1="7" y1="12" x2="13" y2="12"/></svg></div>
+          <div class="hc-title">Construtor de Legendas</div>
+          <div class="hc-desc">Envie a arte ou o vídeo do post e receba uma legenda pronta pra publicar, gerada por IA.</div>
+        </button>
+        <button class="home-card" data-section="gridsim" type="button">
+          <div class="hc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/></svg></div>
+          <div class="hc-title">Simulador de Grid</div>
+          <div class="hc-desc">Veja como um carrossel de posts fica montado lado a lado antes de publicar.</div>
+        </button>
+        <button class="home-card" data-section="mockup" type="button">
+          <div class="hc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2.5"/><line x1="10" y1="19" x2="14" y2="19"/></svg></div>
+          <div class="hc-title">Mockup de Post</div>
+          <div class="hc-desc">Encaixa sua arte dentro de uma moldura de celular/feed pra apresentar pro cliente.</div>
         </button>
       </div>
     </div>
@@ -1755,6 +2038,285 @@
         </div>
         <div class="contraste-ratio" id="contrasteRatio">—</div>
         <div class="contraste-checks" id="contrasteChecks"></div>
+      </div>
+    </div>
+  </section>
+</div>
+</div>
+
+<!-- ============ CONSTRUTOR DE PALETA ============ -->
+<div class="section-page" id="sec-construtorpaleta">
+<div class="wrap">
+  <header class="hero">
+    <div class="eyebrow">Ferramenta</div>
+    <h1 class="title">Construtor de Paleta</h1>
+    <p class="lede">Gere paletas harmônicas do zero, com base em regras de teoria de cor. Trave as cores que gostar e gere de novo só o resto.</p>
+  </header>
+  <section class="section">
+    <div class="split-presets" id="harmonyPresets" style="margin-bottom:22px;">
+      <button class="split-preset-btn active" data-harmony="complementar" type="button">Complementar</button>
+      <button class="split-preset-btn" data-harmony="analoga" type="button">Análoga</button>
+      <button class="split-preset-btn" data-harmony="triade" type="button">Tríade</button>
+      <button class="split-preset-btn" data-harmony="tetradica" type="button">Tetrádica</button>
+      <button class="split-preset-btn" data-harmony="monocromatica" type="button">Monocromática</button>
+      <button class="split-preset-btn" data-harmony="aleatoria" type="button">Aleatória</button>
+    </div>
+    <div class="palette-builder-grid" id="paletteBuilderGrid"></div>
+    <div class="action-bar" style="margin-top:24px;">
+      <button class="generate-btn" id="paletteGenerateBtn">Gerar nova paleta</button>
+      <button class="reset-btn" id="paletteCopyAllBtn" type="button">Copiar todos os hex</button>
+    </div>
+    <p class="split-info" style="margin-top:14px;">Clique no cadeado de uma cor pra travar ela — as travadas não mudam quando você gerar de novo.</p>
+  </section>
+</div>
+</div>
+
+<!-- ============ CONSTRUTOR DE LEGENDAS ============ -->
+<div class="section-page" id="sec-legendas">
+<div class="wrap">
+  <header class="hero">
+    <div class="eyebrow">Ferramenta</div>
+    <h1 class="title">Construtor de Legendas</h1>
+    <p class="lede">Envie a arte ou o vídeo do post e receba uma legenda comercial, pronta pra publicar — a IA olha pro conteúdo e escreve com base no que vê.</p>
+  </header>
+  <section class="section">
+    <label class="split-upload" id="capUploadArea">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+      <div class="su-title">Arraste a imagem ou vídeo do post aqui, ou clique para escolher</div>
+      <div class="su-sub">JPG, PNG, WebP, MP4, MOV ou WebM</div>
+      <input type="file" id="capFileInput" accept="image/jpeg,image/png,image/webp,video/mp4,video/quicktime,video/webm,.mov">
+    </label>
+
+    <div class="rmbg-workspace" id="capWorkspace">
+      <div class="cap-layout">
+        <div class="split-preview-box">
+          <div id="capPreviewWrap" style="width:100%;">
+            <img id="capPreviewImg" alt="Prévia" style="max-width:100%; max-height:50vh; border-radius:10px; display:none; margin:0 auto;">
+            <video id="capPreviewVideo" style="max-width:100%; max-height:50vh; border-radius:10px; display:none; margin:0 auto;" controls></video>
+          </div>
+        </div>
+        <div class="split-controls">
+          <div>
+            <span class="field-label" style="display:block; margin-bottom:8px;">Nome da marca/negócio <span style="text-transform:none; font-weight:400; color:var(--ink-faint);">(opcional)</span></span>
+            <input type="text" id="capBrandInput" class="text-field" placeholder="Ex: CWBranding" maxlength="60" style="font-size:13px; padding:10px 12px;">
+          </div>
+          <div>
+            <span class="field-label" style="display:block; margin-bottom:8px;">Call-to-action <span style="text-transform:none; font-weight:400; color:var(--ink-faint);">(opcional)</span></span>
+            <input type="text" id="capCtaInput" class="text-field" placeholder="Ex: chame no WhatsApp, saiba mais no link da bio" maxlength="100" style="font-size:13px; padding:10px 12px;">
+          </div>
+          <div>
+            <span class="field-label" style="display:block; margin-bottom:8px;">Contexto extra <span style="text-transform:none; font-weight:400; color:var(--ink-faint);">(opcional)</span></span>
+            <textarea id="capContextInput" class="text-field" placeholder="Ex: é uma promoção de fim de ano, lançamento de produto..." maxlength="300" rows="3" style="font-size:13px; padding:10px 12px; resize:vertical; width:100%; box-sizing:border-box;"></textarea>
+          </div>
+          <button class="generate-btn" id="capGenerateBtn">Gerar legenda</button>
+          <button class="split-reset-link" id="capResetBtn" type="button">Escolher outra mídia</button>
+        </div>
+      </div>
+
+      <div class="cap-result" id="capResultArea" style="display:none;"></div>
+    </div>
+  </section>
+</div>
+</div>
+
+<!-- ============ SIMULADOR DE GRID ============ -->
+<div class="section-page" id="sec-gridsim">
+<div class="wrap">
+  <header class="hero">
+    <div class="eyebrow">Ferramenta</div>
+    <h1 class="title">Simulador de Grid</h1>
+    <p class="lede">Suba as imagens de um carrossel ou de um lote de posts e veja como ficam lado a lado no grid do perfil, antes de publicar.</p>
+  </header>
+  <section class="section">
+    <label class="split-upload" id="gridUploadArea">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+      <div class="su-title">Arraste várias imagens aqui, ou clique para escolher</div>
+      <div class="su-sub">Pode selecionar várias de uma vez — JPG, PNG ou WebP</div>
+      <input type="file" id="gridFileInput" accept="image/jpeg,image/png,image/webp" multiple>
+    </label>
+
+    <div class="rmbg-workspace" id="gridWorkspace">
+      <div class="section-row">
+        <div class="split-mode-tabs" id="gridColsToggle" style="width:auto; display:inline-flex;">
+          <button class="split-mode-tab active" data-cols="3" type="button">3 colunas</button>
+          <button class="split-mode-tab" data-cols="2" type="button">2 colunas</button>
+        </div>
+        <button class="reset-btn" id="gridAddMoreBtn" type="button">+ Adicionar mais imagens</button>
+      </div>
+      <p class="split-info" style="margin:14px 0;">Arraste uma imagem sobre outra pra trocar a ordem delas no grid.</p>
+      <div class="grid-sim-preview" id="gridSimPreview"></div>
+      <button class="split-reset-link" id="gridResetBtn" type="button" style="margin-top:20px;">Recomeçar do zero</button>
+    </div>
+  </section>
+</div>
+</div>
+
+<!-- ============ MOCKUP DE POST ============ -->
+<div class="section-page" id="sec-mockup">
+<div class="wrap">
+  <header class="hero">
+    <div class="eyebrow">Ferramenta</div>
+    <h1 class="title">Mockup de Post</h1>
+    <p class="lede">Encaixe sua arte dentro de uma moldura de celular pra apresentar pro cliente com mais contexto do que uma imagem solta.</p>
+  </header>
+  <section class="section">
+    <label class="split-upload" id="mockupUploadArea">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+      <div class="su-title">Arraste sua arte aqui, ou clique para escolher</div>
+      <div class="su-sub">JPG, PNG ou WebP</div>
+      <input type="file" id="mockupFileInput" accept="image/jpeg,image/png,image/webp">
+    </label>
+
+    <div class="rmbg-workspace" id="mockupWorkspace">
+      <div class="mockup-layout">
+        <div class="mockup-preview-box">
+          <div class="mockup-phone style-feed" id="mockupPhone">
+            <div class="mockup-phone-notch"></div>
+            <div class="mockup-phone-inner">
+              <!-- status bar -->
+              <div class="mkp-status-bar">
+                <span class="mkp-time">9:41</span>
+                <div class="mkp-status-icons">
+                  <svg viewBox="0 0 24 24" width="9" height="9" fill="currentColor"><path d="M1 1l22 22M16.72 11.06A10.94 10.94 0 0 1 19 12.55M5 12.55a10.94 10.94 0 0 1 5.17-2.39M10.71 5.05A16 16 0 0 1 22.56 9M1.42 9a15.91 15.91 0 0 1 4.7-2.88M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <svg viewBox="0 0 24 24" width="9" height="9" fill="currentColor"><rect x="2" y="7" width="14" height="11" rx="2"/><path d="M18 10.5l4-2v7l-4-2z" opacity=".7"/></svg>
+                  <svg viewBox="0 0 24 24" width="11" height="11"><rect x="2" y="7" width="18" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M6 7V5a2 2 0 0 1 4 0v2" fill="none" stroke="currentColor" stroke-width="1.5"/><line x1="20" y1="11" x2="22" y2="11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                </div>
+              </div>
+              <!-- barra de progresso (story/reels) -->
+              <div class="mkp-story-bar">
+                <div class="mkp-bar done"></div>
+                <div class="mkp-bar" style="background:rgba(255,255,255,.7);"></div>
+                <div class="mkp-bar"></div>
+              </div>
+              <!-- header do post -->
+              <div class="mkp-post-header">
+                <div class="mkp-avatar"><div class="mkp-avatar-inner" id="mkpAvatarInner">M</div></div>
+                <span class="mkp-username" id="mkpUsername">sua_marca <small>• Agora</small></span>
+                <svg class="mkp-more" viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg>
+              </div>
+              <!-- imagem -->
+              <div class="mkp-image-wrap" id="mkpImageWrap">
+                <img id="mockupImg" alt="Prévia">
+                <!-- rodapé do Reels -->
+                <div class="mkp-reels-footer">
+                  <div class="mkp-rf-user" id="mkpReelsUser">sua_marca</div>
+                  <div class="mkp-rf-caption">✨ Nova coleção disponível — link na bio</div>
+                </div>
+              </div>
+              <!-- indicador de páginas (feed carrossel) -->
+              <div class="mkp-page-dots" id="mkpDots">
+                <div class="mkp-dot"></div>
+                <div class="mkp-dot inactive"></div>
+                <div class="mkp-dot inactive"></div>
+              </div>
+              <!-- ações -->
+              <div class="mkp-actions">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                <div class="mkp-actions-right">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+                </div>
+              </div>
+              <div class="mkp-likes">1.243 curtidas</div>
+              <div class="mkp-caption"><b id="mkpCaption">sua_marca</b> ✨ Nova coleção disponível — clique no link da bio.</div>
+              <!-- barra de comentário -->
+              <div class="mkp-comment-bar">
+                <div class="mkp-comment-avatar"></div>
+                <div class="mkp-comment-input">Adicione um comentário...</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mockup-controls">
+          <span class="field-label">Estilo</span>
+          <div class="split-presets" id="mockupStylePresets">
+            <button class="split-preset-btn active" data-style="feed" type="button">Post de feed</button>
+            <button class="split-preset-btn" data-style="story" type="button">Story</button>
+            <button class="split-preset-btn" data-style="reels" type="button">Reels</button>
+          </div>
+          <div style="margin-top:16px;">
+            <span class="field-label" style="display:block; margin-bottom:8px;">Nome da conta</span>
+            <input type="text" id="mockupUsernameInput" class="text-field" placeholder="sua_marca" maxlength="30" style="font-size:12.5px; padding:9px 12px;">
+          </div>
+          <button class="reset-btn" id="mockupChangeImgBtn" type="button" style="margin-top:18px;">Trocar imagem</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</div>
+
+<!-- ============ CONVERSOR DE ARQUIVOS ============ -->
+<div class="section-page" id="sec-conversor">
+<div class="wrap">
+  <header class="hero">
+    <div class="eyebrow">Ferramenta</div>
+    <h1 class="title">Conversor de Arquivos</h1>
+    <p class="lede">HEIC pra JPG/PNG, PDF pra imagem, e conversão entre JPG/PNG/WebP — tudo processado no seu navegador, sem subir arquivo pra lugar nenhum.</p>
+  </header>
+  <section class="section">
+    <label class="split-upload" id="convUploadArea">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+      <div class="su-title">Arraste um arquivo aqui, ou clique para escolher</div>
+      <div class="su-sub">HEIC, PDF, JPG, PNG ou WebP</div>
+      <input type="file" id="convFileInput" accept=".heic,.heif,.pdf,.jpg,.jpeg,.png,.webp,image/*,application/pdf">
+    </label>
+
+    <div class="rmbg-workspace" id="convWorkspace">
+      <div class="conv-file-info" id="convFileInfo"></div>
+      <div id="convOptionsArea"></div>
+      <div class="action-bar" style="margin-top:20px;">
+        <button class="generate-btn" id="convProcessBtn">Converter</button>
+        <button class="split-reset-link" id="convResetBtn" type="button">Escolher outro arquivo</button>
+      </div>
+      <div id="convResultsArea" style="margin-top:24px;"></div>
+    </div>
+  </section>
+</div>
+</div>
+
+<!-- ============ COMPRESSOR DE VÍDEO ============ -->
+<div class="section-page" id="sec-compressorvideo">
+<div class="wrap">
+  <header class="hero">
+    <div class="eyebrow">Ferramenta</div>
+    <h1 class="title">Compressor de Vídeo</h1>
+    <p class="lede">Reduz o peso de um vídeo até um tamanho máximo que você escolher, direto no navegador. Na primeira vez, baixa o motor de compressão (leva um tempinho a mais).</p>
+  </header>
+  <section class="section">
+    <label class="split-upload" id="vcUploadArea">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+      <div class="su-title">Arraste um vídeo aqui, ou clique para escolher</div>
+      <div class="su-sub">MP4, MOV ou WebM</div>
+      <input type="file" id="vcFileInput" accept="video/mp4,video/quicktime,video/webm,video/x-m4v,.mov">
+    </label>
+
+    <div class="rmbg-workspace" id="vcWorkspace">
+      <div class="vc-layout">
+        <div class="split-preview-box">
+          <video id="vcPreviewVideo" controls style="max-width:100%; max-height:50vh; border-radius:10px;"></video>
+        </div>
+        <div class="split-controls">
+          <div id="vcMeta" class="split-info"></div>
+          <div class="split-num-row">
+            <label>Tamanho máximo</label>
+          </div>
+          <div class="split-presets" id="vcSizePresets">
+            <button class="split-preset-btn" data-mb="8" type="button">8 MB</button>
+            <button class="split-preset-btn active" data-mb="16" type="button">16 MB</button>
+            <button class="split-preset-btn" data-mb="25" type="button">25 MB</button>
+            <button class="split-preset-btn" data-mb="50" type="button">50 MB</button>
+          </div>
+          <div class="split-num-input" style="width:100%;">
+            <span style="font-size:12.5px; color:var(--ink-soft);">Personalizado:</span>
+            <input type="text" id="vcCustomMb" inputmode="numeric" placeholder="MB" style="width:60px;">
+          </div>
+          <button class="generate-btn" id="vcProcessBtn">Comprimir vídeo</button>
+          <button class="split-reset-link" id="vcResetBtn" type="button">Escolher outro vídeo</button>
+          <div id="vcStatus" class="split-info"></div>
+          <div id="vcResultArea"></div>
+        </div>
       </div>
     </div>
   </section>
@@ -2760,6 +3322,11 @@ function attachPopoverEvents(cat){
 }
 
 function escapeAttr(str){ return String(str).replace(/"/g,'&quot;'); }
+function escapeHtml(str){
+  return String(str)
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+    .replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+}
 
 function markDirtyIfNeeded(){
   if(state.generated) state.dirty = true;
@@ -2997,9 +3564,13 @@ const NAV_DROPDOWNS = [
   { wrapId:'aiDropdown', triggerId:'aiDropdownTrigger', menuId:'aiDropdownMenu',
     sections:['pessoas','produto','animais','paisagens','texturas','render3d','ilustracao','galeria','guia'] },
   { wrapId:'imageDropdown', triggerId:'imageDropdownTrigger', menuId:'imageDropdownMenu',
-    sections:['cortarimagem','removerfundo'] },
+    sections:['cortarimagem','removerfundo','conversor'] },
   { wrapId:'colorDropdown', triggerId:'colorDropdownTrigger', menuId:'colorDropdownMenu',
-    sections:['paleta','contraste'] },
+    sections:['paleta','construtorpaleta','contraste'] },
+  { wrapId:'videoDropdown', triggerId:'videoDropdownTrigger', menuId:'videoDropdownMenu',
+    sections:['compressorvideo'] },
+  { wrapId:'socialDropdown', triggerId:'socialDropdownTrigger', menuId:'socialDropdownMenu',
+    sections:['legendas','gridsim','mockup'] },
 ].map(d => ({
   ...d,
   wrap: document.getElementById(d.wrapId),
@@ -4222,7 +4793,7 @@ function initIlustracaoBuilder(){
    salva só no localStorage do navegador dela. Nunca passa por
    nenhum servidor nosso — vai direto daqui pro Google.
 ============================================================ */
-const GEMINI_MODEL = 'gemini-2.5-flash-image';
+const GEMINI_MODEL = 'gemini-3.1-flash-lite-image';
 const GEMINI_KEY_STORAGE = 'museGeminiApiKey';
 
 const imgGenOverlay = document.getElementById('imgGenOverlay');
@@ -4869,6 +5440,891 @@ document.querySelectorAll('.gen-image-btn').forEach(btn=>{
   });
 
   update();
+})();
+
+/* ============================================================
+   CONSTRUTOR DE PALETA — gera paletas por regras de harmonia
+============================================================ */
+(function(){
+  const grid = document.getElementById('paletteBuilderGrid');
+  if(!grid) return;
+  const generateBtn = document.getElementById('paletteGenerateBtn');
+  const copyAllBtn = document.getElementById('paletteCopyAllBtn');
+  const presetsEl = document.getElementById('harmonyPresets');
+
+  let harmony = 'complementar';
+  let colors = []; // [{h,s,l,locked}]
+
+  function hslToHex(h,s,l){
+    s/=100; l/=100;
+    const k = n => (n + h/30) % 12;
+    const a = s * Math.min(l, 1-l);
+    const f = n => l - a * Math.max(-1, Math.min(k(n)-3, Math.min(9-k(n), 1)));
+    const toHex = x => Math.round(x*255).toString(16).padStart(2,'0');
+    return '#' + toHex(f(0)) + toHex(f(8)) + toHex(f(4));
+  }
+
+  function randHue(){ return Math.floor(Math.random()*360); }
+
+  function genHues(baseHue){
+    switch(harmony){
+      case 'complementar': return [baseHue, (baseHue+180)%360, (baseHue+20)%360, (baseHue+200)%360, (baseHue+340)%360];
+      case 'analoga': return [baseHue, (baseHue+30)%360, (baseHue+60)%360, (baseHue-30+360)%360, (baseHue-60+360)%360];
+      case 'triade': return [baseHue, (baseHue+120)%360, (baseHue+240)%360, (baseHue+15)%360, (baseHue+135)%360];
+      case 'tetradica': return [baseHue, (baseHue+90)%360, (baseHue+180)%360, (baseHue+270)%360, (baseHue+45)%360];
+      case 'monocromatica': return [baseHue,baseHue,baseHue,baseHue,baseHue];
+      case 'aleatoria': return [randHue(),randHue(),randHue(),randHue(),randHue()];
+      default: return [baseHue, (baseHue+180)%360, (baseHue+20)%360, (baseHue+200)%360, (baseHue+340)%360];
+    }
+  }
+
+  function genSL(i){
+    if(harmony === 'monocromatica'){
+      const ls = [22, 38, 54, 70, 86];
+      return { s: 55, l: ls[i] };
+    }
+    const satBase = [70, 65, 60, 55, 50][i];
+    const lightBase = [30, 45, 58, 70, 82][i];
+    return { s: satBase, l: lightBase };
+  }
+
+  function generatePalette(){
+    const baseHue = randHue();
+    const hues = genHues(baseHue);
+    const newColors = hues.map((h,i)=>{
+      const {s,l} = genSL(i);
+      return { h, s, l };
+    });
+    colors = colors.length ? colors.map((c,i)=> c.locked ? c : {...newColors[i], locked:false}) : newColors.map(c=>({...c, locked:false}));
+    render();
+  }
+
+  function render(){
+    grid.innerHTML = '';
+    colors.forEach((c,i)=>{
+      const hex = hslToHex(c.h, c.s, c.l);
+      const textColor = c.l > 55 ? '#1A1A1A' : '#FFFFFF';
+      const el = document.createElement('div');
+      el.className = 'pb-swatch' + (c.locked ? ' locked' : '');
+      el.style.background = hex;
+      el.style.color = textColor;
+      el.innerHTML = `
+        <div class="pb-lock" data-i="${i}">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            ${c.locked
+              ? '<rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>'
+              : '<rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/>'}
+          </svg>
+        </div>
+        <span class="pb-hex">${hex.toUpperCase()}</span>
+      `;
+      el.querySelector('.pb-hex').addEventListener('click', (e)=>{
+        e.stopPropagation();
+        navigator.clipboard.writeText(hex.toUpperCase()).then(()=>{
+          const span = el.querySelector('.pb-hex');
+          const orig = span.textContent;
+          span.textContent = 'Copiado ✓';
+          setTimeout(()=> span.textContent = orig, 1200);
+        });
+      });
+      el.querySelector('.pb-lock').addEventListener('click', (e)=>{
+        e.stopPropagation();
+        colors[i].locked = !colors[i].locked;
+        render();
+      });
+      grid.appendChild(el);
+    });
+  }
+
+  presetsEl.querySelectorAll('.split-preset-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      presetsEl.querySelectorAll('.split-preset-btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      harmony = btn.dataset.harmony;
+      generatePalette();
+    });
+  });
+
+  generateBtn.addEventListener('click', generatePalette);
+  copyAllBtn.addEventListener('click', ()=>{
+    const hexes = colors.map(c=>hslToHex(c.h,c.s,c.l).toUpperCase());
+    navigator.clipboard.writeText(hexes.join('\n')).then(()=>{
+      const orig = copyAllBtn.textContent;
+      copyAllBtn.textContent = 'Copiado ✓';
+      setTimeout(()=> copyAllBtn.textContent = orig, 1500);
+    });
+  });
+
+  generatePalette();
+})();
+
+/* ============================================================
+   SIMULADOR DE GRID
+============================================================ */
+(function(){
+  const uploadArea = document.getElementById('gridUploadArea');
+  const fileInput = document.getElementById('gridFileInput');
+  const workspace = document.getElementById('gridWorkspace');
+  const preview = document.getElementById('gridSimPreview');
+  const addMoreBtn = document.getElementById('gridAddMoreBtn');
+  const resetBtn = document.getElementById('gridResetBtn');
+  const colsToggle = document.getElementById('gridColsToggle');
+  if(!uploadArea) return;
+
+  let items = []; // { url }
+  let cols = 3;
+  let dragSrcIndex = null;
+
+  function addFiles(fileList){
+    Array.from(fileList).forEach(file=>{
+      if(!file.type.startsWith('image/')) return;
+      items.push({ url: URL.createObjectURL(file) });
+    });
+    if(items.length){
+      uploadArea.style.display = 'none';
+      workspace.classList.add('active');
+    }
+    render();
+  }
+
+  function render(){
+    preview.className = 'grid-sim-preview' + (cols===2 ? ' cols-2' : '');
+    preview.innerHTML = '';
+    items.forEach((item, i)=>{
+      const el = document.createElement('div');
+      el.className = 'grid-sim-item';
+      el.draggable = true;
+      el.dataset.i = i;
+      el.innerHTML = `<img src="${item.url}" alt=""><button class="gs-remove" type="button" data-i="${i}">✕</button>`;
+
+      el.addEventListener('dragstart', ()=>{ dragSrcIndex = i; el.classList.add('dragging'); });
+      el.addEventListener('dragend', ()=>{ el.classList.remove('dragging'); });
+      el.addEventListener('dragover', (e)=>{ e.preventDefault(); el.classList.add('drag-over'); });
+      el.addEventListener('dragleave', ()=>{ el.classList.remove('drag-over'); });
+      el.addEventListener('drop', (e)=>{
+        e.preventDefault();
+        el.classList.remove('drag-over');
+        if(dragSrcIndex === null || dragSrcIndex === i) return;
+        const moved = items.splice(dragSrcIndex, 1)[0];
+        items.splice(i, 0, moved);
+        dragSrcIndex = null;
+        render();
+      });
+      el.querySelector('.gs-remove').addEventListener('click', (e)=>{
+        e.stopPropagation();
+        items.splice(i, 1);
+        if(!items.length){
+          uploadArea.style.display = '';
+          workspace.classList.remove('active');
+        }
+        render();
+      });
+      preview.appendChild(el);
+    });
+  }
+
+  fileInput.addEventListener('change', ()=>{ if(fileInput.files.length) addFiles(fileInput.files); fileInput.value=''; });
+  uploadArea.addEventListener('click', e=>{ if(e.target.tagName!=='INPUT') fileInput.click(); });
+  ['dragenter','dragover'].forEach(ev=> uploadArea.addEventListener(ev, e=>{ e.preventDefault(); uploadArea.classList.add('dragover'); }));
+  ['dragleave','drop'].forEach(ev=> uploadArea.addEventListener(ev, e=>{ e.preventDefault(); uploadArea.classList.remove('dragover'); }));
+  uploadArea.addEventListener('drop', e=>{ if(e.dataTransfer.files.length) addFiles(e.dataTransfer.files); });
+
+  addMoreBtn.addEventListener('click', ()=> fileInput.click());
+  resetBtn.addEventListener('click', ()=>{
+    items.forEach(it=> URL.revokeObjectURL(it.url));
+    items = [];
+    uploadArea.style.display = '';
+    workspace.classList.remove('active');
+  });
+  colsToggle.querySelectorAll('.split-mode-tab').forEach(tab=>{
+    tab.addEventListener('click', ()=>{
+      colsToggle.querySelectorAll('.split-mode-tab').forEach(t=>t.classList.remove('active'));
+      tab.classList.add('active');
+      cols = parseInt(tab.dataset.cols, 10);
+      render();
+    });
+  });
+})();
+
+/* ============================================================
+   MOCKUP DE POST
+============================================================ */
+(function(){
+  const uploadArea = document.getElementById('mockupUploadArea');
+  const fileInput = document.getElementById('mockupFileInput');
+  const workspace = document.getElementById('mockupWorkspace');
+  const img = document.getElementById('mockupImg');
+  const phone = document.getElementById('mockupPhone');
+  const changeBtn = document.getElementById('mockupChangeImgBtn');
+  const stylePresets = document.getElementById('mockupStylePresets');
+  const usernameInput = document.getElementById('mockupUsernameInput');
+  const mkpUsername = document.getElementById('mkpUsername');
+  const mkpCaption = document.getElementById('mkpCaption');
+  const mkpAvatarInner = document.getElementById('mkpAvatarInner');
+  const mkpDots = document.getElementById('mkpDots');
+  if(!uploadArea) return;
+
+  function applyStyle(style){
+    phone.className = 'mockup-phone style-' + style;
+  }
+
+  function setUsername(name){
+    const safe = name.trim() || 'sua_marca';
+    if(mkpUsername) mkpUsername.innerHTML = safe + ' <small>• Agora</small>';
+    if(mkpCaption) mkpCaption.textContent = safe;
+    if(mkpAvatarInner) mkpAvatarInner.textContent = safe[0].toUpperCase();
+    const reelsUser = document.getElementById('mkpReelsUser');
+    if(reelsUser) reelsUser.textContent = safe;
+  }
+
+  function loadFile(file){
+    if(!file || !file.type.startsWith('image/')) return;
+    img.src = URL.createObjectURL(file);
+    uploadArea.style.display = 'none';
+    workspace.classList.add('active');
+  }
+
+  fileInput.addEventListener('change', ()=>{ if(fileInput.files[0]) loadFile(fileInput.files[0]); });
+  uploadArea.addEventListener('click', e=>{ if(e.target.tagName!=='INPUT') fileInput.click(); });
+  ['dragenter','dragover'].forEach(ev=> uploadArea.addEventListener(ev, e=>{ e.preventDefault(); uploadArea.classList.add('dragover'); }));
+  ['dragleave','drop'].forEach(ev=> uploadArea.addEventListener(ev, e=>{ e.preventDefault(); uploadArea.classList.remove('dragover'); }));
+  uploadArea.addEventListener('drop', e=>{ const f=e.dataTransfer.files[0]; if(f) loadFile(f); });
+
+  changeBtn.addEventListener('click', ()=>{
+    uploadArea.style.display = '';
+    workspace.classList.remove('active');
+    fileInput.value = '';
+  });
+
+  stylePresets.querySelectorAll('.split-preset-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      stylePresets.querySelectorAll('.split-preset-btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      applyStyle(btn.dataset.style);
+    });
+  });
+
+  if(usernameInput){
+    usernameInput.addEventListener('input', ()=> setUsername(usernameInput.value));
+  }
+
+  applyStyle('feed');
+})();
+
+/* ============================================================
+   HELPER — carregar script externo sob demanda (só quando usado)
+============================================================ */
+function loadExternalScript(url){
+  return new Promise((resolve, reject)=>{
+    if(document.querySelector(`script[src="${url}"]`)){ resolve(); return; }
+    const s = document.createElement('script');
+    s.src = url;
+    s.onload = () => resolve();
+    s.onerror = () => reject(new Error('Falha ao carregar ' + url));
+    document.head.appendChild(s);
+  });
+}
+
+/* ============================================================
+   CONVERSOR DE ARQUIVOS
+============================================================ */
+(function(){
+  const uploadArea = document.getElementById('convUploadArea');
+  const fileInput = document.getElementById('convFileInput');
+  const workspace = document.getElementById('convWorkspace');
+  const fileInfo = document.getElementById('convFileInfo');
+  const optionsArea = document.getElementById('convOptionsArea');
+  const processBtn = document.getElementById('convProcessBtn');
+  const resetBtn = document.getElementById('convResetBtn');
+  const resultsArea = document.getElementById('convResultsArea');
+  if(!uploadArea) return;
+
+  let currentFile = null;
+  let fileKind = null; // 'heic' | 'pdf' | 'image'
+  let targetFormat = 'jpg';
+
+  function detectKind(file){
+    const name = file.name.toLowerCase();
+    if(name.endsWith('.heic') || name.endsWith('.heif') || file.type === 'image/heic' || file.type === 'image/heif') return 'heic';
+    if(name.endsWith('.pdf') || file.type === 'application/pdf') return 'pdf';
+    if(file.type.startsWith('image/')) return 'image';
+    return null;
+  }
+
+  function fmtBytes(bytes){
+    if(bytes < 1024) return bytes + ' B';
+    if(bytes < 1024*1024) return (bytes/1024).toFixed(0) + ' KB';
+    return (bytes/1024/1024).toFixed(1) + ' MB';
+  }
+
+  function loadFile(file){
+    const kind = detectKind(file);
+    if(!kind){ alert('Formato não reconhecido. Use HEIC, PDF, JPG, PNG ou WebP.'); return; }
+    currentFile = file;
+    fileKind = kind;
+    uploadArea.style.display = 'none';
+    workspace.classList.add('active');
+    resultsArea.innerHTML = '';
+
+    const kindLabel = { heic:'Imagem HEIC/HEIF', pdf:'Documento PDF', image:'Imagem' }[kind];
+    fileInfo.innerHTML = `<span>📄</span><div><b>${escapeAttr(file.name)}</b><br>${kindLabel} · ${fmtBytes(file.size)}</div>`;
+
+    if(kind === 'heic'){
+      targetFormat = 'jpg';
+      optionsArea.innerHTML = `
+        <span class="field-label" style="display:block; margin-bottom:10px;">Converter para</span>
+        <div class="conv-format-row" id="convFormatRow">
+          <button class="split-preset-btn active" data-fmt="jpg" type="button">JPG</button>
+          <button class="split-preset-btn" data-fmt="png" type="button">PNG</button>
+        </div>
+      `;
+      wireFormatRow();
+    } else if(kind === 'pdf'){
+      optionsArea.innerHTML = `<p class="split-info">Converte todas as páginas do PDF em imagens JPG, uma por página.</p>`;
+    } else if(kind === 'image'){
+      const currentExt = file.name.split('.').pop().toLowerCase();
+      const opts = ['jpg','png','webp'].filter(f=> !(f==='jpg' && currentExt==='jpg') && !(f==='jpg' && currentExt==='jpeg') );
+      targetFormat = opts.find(o=>o!==currentExt) || 'png';
+      optionsArea.innerHTML = `
+        <span class="field-label" style="display:block; margin-bottom:10px;">Converter para</span>
+        <div class="conv-format-row" id="convFormatRow">
+          ${['jpg','png','webp'].map(f=>`<button class="split-preset-btn${f===targetFormat?' active':''}" data-fmt="${f}" type="button">${f.toUpperCase()}</button>`).join('')}
+        </div>
+      `;
+      wireFormatRow();
+    }
+  }
+
+  function wireFormatRow(){
+    document.querySelectorAll('#convFormatRow .split-preset-btn').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        document.querySelectorAll('#convFormatRow .split-preset-btn').forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        targetFormat = btn.dataset.fmt;
+      });
+    });
+  }
+
+  function addResult(blob, filename, isImage){
+    const url = URL.createObjectURL(blob);
+    const row = document.createElement('div');
+    row.className = 'conv-result-item';
+    row.innerHTML = `
+      ${isImage ? `<img src="${url}" alt="">` : '<span style="font-size:22px;">📄</span>'}
+      <span class="cri-name">${escapeAttr(filename)} · ${fmtBytes(blob.size)}</span>
+      <a class="reset-btn" href="${url}" download="${filename}">Baixar</a>
+    `;
+    resultsArea.appendChild(row);
+  }
+
+  fileInput.addEventListener('change', ()=>{ if(fileInput.files[0]) loadFile(fileInput.files[0]); });
+  uploadArea.addEventListener('click', e=>{ if(e.target.tagName!=='INPUT') fileInput.click(); });
+  ['dragenter','dragover'].forEach(ev=> uploadArea.addEventListener(ev, e=>{ e.preventDefault(); uploadArea.classList.add('dragover'); }));
+  ['dragleave','drop'].forEach(ev=> uploadArea.addEventListener(ev, e=>{ e.preventDefault(); uploadArea.classList.remove('dragover'); }));
+  uploadArea.addEventListener('drop', e=>{ const f=e.dataTransfer.files[0]; if(f) loadFile(f); });
+
+  resetBtn.addEventListener('click', ()=>{
+    currentFile = null; fileKind = null;
+    fileInput.value = '';
+    uploadArea.style.display = '';
+    workspace.classList.remove('active');
+    resultsArea.innerHTML = '';
+  });
+
+  async function convertImageFormat(file, fmt){
+    const img = new Image();
+    const url = URL.createObjectURL(file);
+    await new Promise((res,rej)=>{ img.onload=res; img.onerror=rej; img.src=url; });
+    const canvas = document.createElement('canvas');
+    canvas.width = img.naturalWidth; canvas.height = img.naturalHeight;
+    const ctx = canvas.getContext('2d');
+    if(fmt==='jpg'){ ctx.fillStyle = '#fff'; ctx.fillRect(0,0,canvas.width,canvas.height); }
+    ctx.drawImage(img, 0, 0);
+    URL.revokeObjectURL(url);
+    const mime = fmt==='jpg' ? 'image/jpeg' : fmt==='png' ? 'image/png' : 'image/webp';
+    return new Promise(res=> canvas.toBlob(b=>res(b), mime, 0.92));
+  }
+
+  processBtn.addEventListener('click', async ()=>{
+    if(!currentFile) return;
+    processBtn.disabled = true;
+    const orig = processBtn.textContent;
+    resultsArea.innerHTML = '';
+
+    try{
+      if(fileKind === 'heic'){
+        processBtn.textContent = 'Carregando conversor...';
+        await loadExternalScript('https://cdn.jsdelivr.net/npm/heic2any/dist/heic2any.min.js');
+        processBtn.textContent = 'Convertendo...';
+        const mime = targetFormat === 'png' ? 'image/png' : 'image/jpeg';
+        const result = await window.heic2any({ blob: currentFile, toType: mime, quality: 0.9 });
+        const blob = Array.isArray(result) ? result[0] : result;
+        const baseName = currentFile.name.replace(/\.(heic|heif)$/i, '');
+        addResult(blob, `${baseName}.${targetFormat}`, true);
+
+      } else if(fileKind === 'pdf'){
+        processBtn.textContent = 'Carregando leitor de PDF...';
+        await loadExternalScript('https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js');
+        window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+        processBtn.textContent = 'Convertendo páginas...';
+        const buffer = await currentFile.arrayBuffer();
+        const pdf = await window.pdfjsLib.getDocument({ data: buffer }).promise;
+        const baseName = currentFile.name.replace(/\.pdf$/i, '');
+        for(let i=1; i<=pdf.numPages; i++){
+          processBtn.textContent = `Convertendo página ${i}/${pdf.numPages}...`;
+          const page = await pdf.getPage(i);
+          const viewport = page.getViewport({ scale: 2 });
+          const canvas = document.createElement('canvas');
+          canvas.width = viewport.width; canvas.height = viewport.height;
+          const ctx = canvas.getContext('2d');
+          await page.render({ canvasContext: ctx, viewport }).promise;
+          const blob = await new Promise(res=> canvas.toBlob(b=>res(b), 'image/jpeg', 0.92));
+          addResult(blob, `${baseName}-pagina-${i}.jpg`, true);
+        }
+
+      } else if(fileKind === 'image'){
+        processBtn.textContent = 'Convertendo...';
+        const blob = await convertImageFormat(currentFile, targetFormat);
+        const baseName = currentFile.name.replace(/\.[^.]+$/, '');
+        addResult(blob, `${baseName}.${targetFormat}`, true);
+      }
+    }catch(e){
+      console.error(e);
+      resultsArea.innerHTML = `<p class="split-info" style="color:#E36B6B;">Erro ao converter: ${escapeAttr(e.message||String(e))}</p>`;
+    }finally{
+      processBtn.disabled = false;
+      processBtn.textContent = orig;
+    }
+  });
+})();
+
+/* ============================================================
+   COMPRESSOR DE VÍDEO — ffmpeg.wasm, mira num tamanho máximo
+============================================================ */
+(function(){
+  const uploadArea = document.getElementById('vcUploadArea');
+  const fileInput = document.getElementById('vcFileInput');
+  const workspace = document.getElementById('vcWorkspace');
+  const previewVideo = document.getElementById('vcPreviewVideo');
+  const metaEl = document.getElementById('vcMeta');
+  const sizePresets = document.getElementById('vcSizePresets');
+  const customMbInput = document.getElementById('vcCustomMb');
+  const processBtn = document.getElementById('vcProcessBtn');
+  const resetBtn = document.getElementById('vcResetBtn');
+  const statusEl = document.getElementById('vcStatus');
+  const resultArea = document.getElementById('vcResultArea');
+  if(!uploadArea) return;
+
+  let currentFile = null;
+  let duration = 0;
+  let targetMb = 16;
+  let ffmpegInstance = null;
+
+  function fmtBytes(bytes){
+    if(bytes < 1024*1024) return (bytes/1024).toFixed(0) + ' KB';
+    return (bytes/1024/1024).toFixed(1) + ' MB';
+  }
+  function fmtDuration(s){
+    const m = Math.floor(s/60), sec = Math.round(s%60);
+    return `${m}:${String(sec).padStart(2,'0')}`;
+  }
+
+  function loadFile(file){
+    if(!file || !file.type.startsWith('video/')){ alert('Escolha um arquivo de vídeo (MP4, MOV ou WebM).'); return; }
+    currentFile = file;
+    const url = URL.createObjectURL(file);
+    previewVideo.src = url;
+    previewVideo.onloadedmetadata = ()=>{
+      duration = previewVideo.duration;
+      metaEl.textContent = `${file.name} · ${fmtBytes(file.size)} · ${fmtDuration(duration)}`;
+    };
+    uploadArea.style.display = 'none';
+    workspace.classList.add('active');
+    resultArea.innerHTML = '';
+    statusEl.textContent = '';
+  }
+
+  fileInput.addEventListener('change', ()=>{ if(fileInput.files[0]) loadFile(fileInput.files[0]); });
+  uploadArea.addEventListener('click', e=>{ if(e.target.tagName!=='INPUT') fileInput.click(); });
+  ['dragenter','dragover'].forEach(ev=> uploadArea.addEventListener(ev, e=>{ e.preventDefault(); uploadArea.classList.add('dragover'); }));
+  ['dragleave','drop'].forEach(ev=> uploadArea.addEventListener(ev, e=>{ e.preventDefault(); uploadArea.classList.remove('dragover'); }));
+  uploadArea.addEventListener('drop', e=>{ const f=e.dataTransfer.files[0]; if(f) loadFile(f); });
+
+  resetBtn.addEventListener('click', ()=>{
+    currentFile = null; duration = 0;
+    fileInput.value = '';
+    uploadArea.style.display = '';
+    workspace.classList.remove('active');
+    resultArea.innerHTML = '';
+    statusEl.textContent = '';
+  });
+
+  sizePresets.querySelectorAll('.split-preset-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      sizePresets.querySelectorAll('.split-preset-btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      targetMb = parseInt(btn.dataset.mb, 10);
+      customMbInput.value = '';
+    });
+  });
+  customMbInput.addEventListener('input', ()=>{
+    const v = parseInt(customMbInput.value, 10);
+    if(v > 0){
+      sizePresets.querySelectorAll('.split-preset-btn').forEach(b=>b.classList.remove('active'));
+      targetMb = v;
+    }
+  });
+
+  async function ensureFFmpeg(){
+    if(ffmpegInstance) return ffmpegInstance;
+
+    // ffmpeg.wasm precisa de HTTPS com SharedArrayBuffer — não funciona por file://
+    if(location.protocol === 'file:'){
+      throw new Error('O compressor de vídeo precisa ser acessado via HTTPS (ex: seu site no GitHub Pages). Não funciona ao abrir o arquivo direto no navegador por file://.');
+    }
+
+    statusEl.textContent = 'Baixando motor de compressão (só na primeira vez, ~30MB)...';
+    const baseURLFF = 'https://unpkg.com/@ffmpeg/ffmpeg@0.12.6/dist/umd';
+    const baseURLCore = 'https://unpkg.com/@ffmpeg/core@0.12.6/dist/umd';
+
+    // carregar ffmpeg UMD via script tag (mais confiável que ESM pra CORS)
+    await loadExternalScript(`${baseURLFF}/ffmpeg.js`);
+
+    const { FFmpeg } = window.FFmpegWASM || {};
+    if(!FFmpeg) throw new Error('Não foi possível carregar o ffmpeg. Verifique sua internet e tente de novo.');
+
+    const toBlobURL = async (url, mimeType) => {
+      const resp = await fetch(url);
+      const blob = new Blob([await resp.blob()], { type: mimeType });
+      return URL.createObjectURL(blob);
+    };
+    const fetchFile = async (file) => {
+      const buf = await file.arrayBuffer();
+      return new Uint8Array(buf);
+    };
+
+    const ffmpeg = new FFmpeg();
+    ffmpeg.on('progress', ({ progress })=>{
+      if(progress >= 0 && progress <= 1){
+        statusEl.textContent = `Comprimindo... ${Math.round(progress*100)}%`;
+      }
+    });
+
+    await ffmpeg.load({
+      coreURL: await toBlobURL(`${baseURLCore}/ffmpeg-core.js`, 'text/javascript'),
+      wasmURL: await toBlobURL(`${baseURLCore}/ffmpeg-core.wasm`, 'application/wasm'),
+    });
+    ffmpegInstance = { ffmpeg, fetchFile };
+    return ffmpegInstance;
+  }
+
+  processBtn.addEventListener('click', async ()=>{
+    if(!currentFile) return;
+    if(!duration || duration <= 0){ alert('Ainda estou lendo os metadados do vídeo, espera um segundo e tenta de novo.'); return; }
+    processBtn.disabled = true;
+    resultArea.innerHTML = '';
+    const originalLabel = processBtn.textContent;
+
+    try{
+      const { ffmpeg, fetchFile } = await ensureFFmpeg();
+      processBtn.textContent = 'Processando...';
+
+      const audioKbps = 128;
+      const targetBits = targetMb * 8 * 1024 * 1024 * 0.94; // margem de seguranca de 6%
+      let videoKbps = Math.floor((targetBits / duration) / 1000) - audioKbps;
+      if(videoKbps < 100) videoKbps = 100; // piso minimo pra nao ficar ilegivel
+
+      const inputName = 'input' + (currentFile.name.match(/\.[^.]+$/)?.[0] || '.mp4');
+      await ffmpeg.writeFile(inputName, await fetchFile(currentFile));
+
+      statusEl.textContent = 'Comprimindo... 0%';
+      await ffmpeg.exec([
+        '-i', inputName,
+        '-c:v', 'libx264',
+        '-b:v', `${videoKbps}k`,
+        '-maxrate', `${Math.round(videoKbps*1.3)}k`,
+        '-bufsize', `${Math.round(videoKbps*2)}k`,
+        '-c:a', 'aac',
+        '-b:a', `${audioKbps}k`,
+        '-preset', 'fast',
+        '-movflags', '+faststart',
+        'output.mp4'
+      ]);
+
+      const data = await ffmpeg.readFile('output.mp4');
+      const blob = new Blob([data.buffer], { type:'video/mp4' });
+      const url = URL.createObjectURL(blob);
+      const baseName = currentFile.name.replace(/\.[^.]+$/, '');
+
+      statusEl.textContent = `Pronto! ${fmtBytes(blob.size)} (alvo: ${targetMb}MB)`;
+      resultArea.innerHTML = `
+        <div class="conv-result-item">
+          <span style="font-size:20px;">🎬</span>
+          <span class="cri-name">${baseName}-comprimido.mp4 · ${fmtBytes(blob.size)}</span>
+          <a class="reset-btn" href="${url}" download="${baseName}-comprimido.mp4">Baixar</a>
+        </div>
+      `;
+    }catch(e){
+      console.error(e);
+      statusEl.textContent = '';
+      const msg = e.message || String(e);
+      const isCorsError = msg.includes('Worker') || msg.includes('origin') || msg.includes('cross-origin') || msg.includes('SharedArrayBuffer');
+      resultArea.innerHTML = isCorsError
+        ? `<p class="split-info" style="color:#E36B6B;">
+            O compressor precisa rodar em HTTPS com cabeçalhos de segurança específicos.<br>
+            <b>Solução:</b> suba o arquivo <code>_headers</code> (que está no mesmo download) na raiz do seu repositório do GitHub Pages e acesse o site pelo link HTTPS. Abrindo o .html localmente (file://) esse recurso não funciona.
+           </p>`
+        : `<p class="split-info" style="color:#E36B6B;">Erro ao comprimir: ${escapeAttr(msg)}. Verifique sua internet e tente de novo.</p>`;
+    }finally{
+      processBtn.disabled = false;
+      processBtn.textContent = originalLabel;
+    }
+  });
+})();
+
+/* ============================================================
+   CONSTRUTOR DE LEGENDAS — Gemini (visão + texto)
+   Reaproveita a mesma chave gratuita já usada no Gerador de Prompts.
+============================================================ */
+(function(){
+  const uploadArea = document.getElementById('capUploadArea');
+  const fileInput = document.getElementById('capFileInput');
+  const workspace = document.getElementById('capWorkspace');
+  const previewImg = document.getElementById('capPreviewImg');
+  const previewVideo = document.getElementById('capPreviewVideo');
+  const brandInput = document.getElementById('capBrandInput');
+  const ctaInput = document.getElementById('capCtaInput');
+  const contextInput = document.getElementById('capContextInput');
+  const generateBtn = document.getElementById('capGenerateBtn');
+  const resetBtn = document.getElementById('capResetBtn');
+  const resultArea = document.getElementById('capResultArea');
+  if(!uploadArea) return;
+
+  const CAPTION_MODEL = 'gemini-3.6-flash';
+  let mediaKind = null; // 'image' | 'video'
+  let visionBase64 = null; // sempre uma imagem (frame extraído se for vídeo), sem o prefixo data:
+  let visionMime = 'image/jpeg';
+
+  function frameFromVideo(videoEl){
+    return new Promise((resolve)=>{
+      const canvas = document.createElement('canvas');
+      canvas.width = videoEl.videoWidth;
+      canvas.height = videoEl.videoHeight;
+      const ctx = canvas.getContext('2d');
+      ctx.drawImage(videoEl, 0, 0, canvas.width, canvas.height);
+      resolve(canvas.toDataURL('image/jpeg', 0.88));
+    });
+  }
+
+  function loadFile(file){
+    const isImage = file.type.startsWith('image/');
+    const isVideo = file.type.startsWith('video/');
+    if(!isImage && !isVideo){ alert('Envie uma imagem ou um vídeo.'); return; }
+
+    resultArea.style.display = 'none';
+    resultArea.innerHTML = '';
+    uploadArea.style.display = 'none';
+    workspace.classList.add('active');
+
+    if(isImage){
+      mediaKind = 'image';
+      previewVideo.style.display = 'none';
+      previewImg.style.display = 'block';
+      const url = URL.createObjectURL(file);
+      previewImg.src = url;
+      const reader = new FileReader();
+      reader.onload = ()=>{
+        visionBase64 = reader.result.split(',')[1];
+        visionMime = file.type;
+      };
+      reader.readAsDataURL(file);
+    } else {
+      mediaKind = 'video';
+      previewImg.style.display = 'none';
+      previewVideo.style.display = 'block';
+      const url = URL.createObjectURL(file);
+      previewVideo.src = url;
+      previewVideo.addEventListener('loadeddata', async function onReady(){
+        previewVideo.removeEventListener('loadeddata', onReady);
+        // pula pra ~25% do vídeo pra pegar um frame mais representativo que o primeiro
+        const seekTo = Math.min(previewVideo.duration * 0.25, 2);
+        const doExtract = async ()=>{
+          const dataUrl = await frameFromVideo(previewVideo);
+          visionBase64 = dataUrl.split(',')[1];
+          visionMime = 'image/jpeg';
+        };
+        if(seekTo > 0 && isFinite(seekTo)){
+          previewVideo.currentTime = seekTo;
+          previewVideo.addEventListener('seeked', function onSeek(){
+            previewVideo.removeEventListener('seeked', onSeek);
+            doExtract();
+          });
+        } else {
+          doExtract();
+        }
+      }, { once:true });
+    }
+  }
+
+  fileInput.addEventListener('change', ()=>{ if(fileInput.files[0]) loadFile(fileInput.files[0]); });
+  uploadArea.addEventListener('click', e=>{ if(e.target.tagName!=='INPUT') fileInput.click(); });
+  ['dragenter','dragover'].forEach(ev=> uploadArea.addEventListener(ev, e=>{ e.preventDefault(); uploadArea.classList.add('dragover'); }));
+  ['dragleave','drop'].forEach(ev=> uploadArea.addEventListener(ev, e=>{ e.preventDefault(); uploadArea.classList.remove('dragover'); }));
+  uploadArea.addEventListener('drop', e=>{ const f=e.dataTransfer.files[0]; if(f) loadFile(f); });
+
+  resetBtn.addEventListener('click', ()=>{
+    mediaKind = null; visionBase64 = null;
+    fileInput.value = '';
+    uploadArea.style.display = '';
+    workspace.classList.remove('active');
+    resultArea.style.display = 'none';
+    resultArea.innerHTML = '';
+    previewImg.src = ''; previewVideo.src = '';
+  });
+
+  function buildStylePrompt(){
+    const brand = brandInput.value.trim();
+    const cta = ctaInput.value.trim();
+    const context = contextInput.value.trim();
+
+    let p = `Você é um redator publicitário especialista em legendas de Instagram pra negócios. Olhe com atenção pra imagem enviada (se for de um vídeo, é um frame representativo dele) e escreva UMA legenda pronta pra publicar, em português do Brasil.
+
+Regras de estilo, sem exceção:
+- Tom comercial, atrativo, dinâmico e elegante — nunca robótico ou genérico.
+- Comece com um gancho forte nas primeiras palavras, que prenda atenção.
+- Desenvolva o valor/benefício real que aquilo entrega pra quem vê, com linguagem natural de quem entende do assunto.
+- Use emojis com naturalidade ao longo do texto (não just no fim), sem exagerar.
+- Termine com uma chamada pra ação clara.
+- Pode usar 2 a 4 parágrafos curtos, com quebra de linha entre eles.
+- PROIBIDO usar construções típicas de texto gerado por IA, como "não é apenas X, é Y", "mais do que X, Y é...", "no mundo atual", "em suma", "por fim", ou qualquer fórmula de contraste batida do tipo "não se trata de X, mas de Y".
+- PROIBIDO qualquer texto de abertura tipo "Aqui está a legenda:" — devolva SÓ a legenda, pronta pra copiar e colar.`;
+
+    if(brand) p += `\n- O nome da marca/negócio é "${brand}" — mencione ele naturalmente se fizer sentido.`;
+    if(cta) p += `\n- A chamada pra ação final deve ser baseada nisso: "${cta}".`;
+    if(context) p += `\n- Contexto adicional sobre esse post: ${context}`;
+
+    return p;
+  }
+
+  function renderKeySetup(){
+    resultArea.style.display = 'block';
+    resultArea.innerHTML = `
+      <p style="font-size:13.5px; color:var(--ink-soft); line-height:1.6; margin-bottom:14px;">
+        Pra gerar legendas, cada pessoa usa sua própria chave gratuita do Google (a mesma que já usa pra gerar imagem no Gerador de Prompts — se já configurou lá, é a mesma).
+      </p>
+      <div class="key-input-row">
+        <input type="text" id="capKeyInput" placeholder="Cole sua chave aqui (começa com AIza...)">
+        <button class="generate-btn" id="capKeySaveBtn" type="button">Salvar</button>
+      </div>
+      <div class="img-gen-note">
+        Não tem uma chave ainda? <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">Crie uma grátis no Google AI Studio ↗</a>
+      </div>
+    `;
+    document.getElementById('capKeySaveBtn').addEventListener('click', ()=>{
+      const val = document.getElementById('capKeyInput').value.trim();
+      if(!val) return;
+      saveGeminiKey(val);
+      runCaptionGeneration();
+    });
+    document.getElementById('capKeyInput').addEventListener('keydown', e=>{
+      if(e.key==='Enter') document.getElementById('capKeySaveBtn').click();
+    });
+  }
+
+  function renderCapLoading(){
+    resultArea.style.display = 'block';
+    resultArea.innerHTML = `
+      <div style="display:flex; align-items:center; gap:14px;">
+        <div class="img-gen-spinner"></div>
+        <span style="font-size:13px; color:var(--ink-soft);">Analisando a mídia e escrevendo a legenda...</span>
+      </div>
+    `;
+  }
+
+  function renderCapError(message){
+    resultArea.style.display = 'block';
+    resultArea.innerHTML = `
+      <p style="color:#E36B6B; font-size:13.5px; line-height:1.6;">${message}</p>
+      <div class="cap-result-actions" style="margin-top:12px;">
+        <button class="reset-btn" id="capRetryBtn" type="button">Tentar de novo</button>
+        <button class="link-btn" id="capChangeKeyBtn" type="button">Trocar chave</button>
+      </div>
+    `;
+    document.getElementById('capRetryBtn').addEventListener('click', runCaptionGeneration);
+    document.getElementById('capChangeKeyBtn').addEventListener('click', ()=>{ clearGeminiKey(); renderKeySetup(); });
+  }
+
+  function renderCapResult(text){
+    resultArea.style.display = 'block';
+    resultArea.innerHTML = `
+      <div class="cap-result-text" id="capResultText">${escapeHtml(text)}</div>
+      <div class="cap-result-actions">
+        <button class="generate-btn" id="capCopyBtn" type="button">Copiar legenda</button>
+        <button class="reset-btn" id="capAgainBtn" type="button">Gerar outra versão</button>
+      </div>
+    `;
+    document.getElementById('capCopyBtn').addEventListener('click', ()=>{
+      navigator.clipboard.writeText(text).then(()=>{
+        const btn = document.getElementById('capCopyBtn');
+        const orig = btn.textContent;
+        btn.textContent = 'Copiado ✓';
+        setTimeout(()=> btn.textContent = orig, 1500);
+      });
+    });
+    document.getElementById('capAgainBtn').addEventListener('click', runCaptionGeneration);
+  }
+
+  async function runCaptionGeneration(){
+    if(!visionBase64){ alert('Aguarde a mídia terminar de carregar e tente de novo.'); return; }
+    const key = getSavedGeminiKey();
+    if(!key){ renderKeySetup(); return; }
+
+    renderCapLoading();
+    try{
+      const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${CAPTION_MODEL}:generateContent?key=${encodeURIComponent(key)}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          contents: [{
+            parts: [
+              { text: buildStylePrompt() },
+              { inline_data: { mime_type: visionMime, data: visionBase64 } }
+            ]
+          }]
+        })
+      });
+      const data = await res.json();
+
+      if(!res.ok){
+        const apiMsg = (data && data.error && data.error.message) ? data.error.message : `Erro HTTP ${res.status}`;
+        if(res.status === 400 && /API key not valid/i.test(apiMsg)){
+          renderCapError('Essa chave não é válida. Confere se copiou certinho, ou gera uma nova.');
+        } else if(res.status === 429){
+          renderCapError('Cota gratuita esgotada por agora (renova diariamente). Tenta de novo mais tarde.');
+        } else {
+          renderCapError(`Erro do Google: ${escapeAttr(apiMsg)}`);
+        }
+        return;
+      }
+
+      const parts = data?.candidates?.[0]?.content?.parts || [];
+      const textPart = parts.find(p=>p.text);
+      const reason = data?.candidates?.[0]?.finishReason;
+      if(!textPart){
+        if(reason === 'SAFETY' || reason === 'PROHIBITED_CONTENT'){
+          renderCapError('O Gemini recusou gerar essa legenda por política de conteúdo.');
+        } else {
+          renderCapError('O Gemini não devolveu texto dessa vez. Tenta de novo.');
+        }
+        return;
+      }
+      renderCapResult(textPart.text.trim());
+    }catch(e){
+      renderCapError('Falha de conexão (Failed to fetch). Verifica sua internet e tenta de novo.');
+    }
+  }
+
+  generateBtn.addEventListener('click', runCaptionGeneration);
 })();
 
 </script>
