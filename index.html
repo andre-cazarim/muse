@@ -5986,24 +5986,11 @@ function loadExternalScript(url){
     }
 
     statusEl.textContent = 'Baixando motor de compressão (só na primeira vez, ~30MB)...';
-    const baseURLFF = 'https://unpkg.com/@ffmpeg/ffmpeg@0.12.6/dist/umd';
-    const baseURLCore = 'https://unpkg.com/@ffmpeg/core@0.12.6/dist/umd';
 
-    // carregar ffmpeg UMD via script tag (mais confiável que ESM pra CORS)
-    await loadExternalScript(`${baseURLFF}/ffmpeg.js`);
-
-    const { FFmpeg } = window.FFmpegWASM || {};
-    if(!FFmpeg) throw new Error('Não foi possível carregar o ffmpeg. Verifique sua internet e tente de novo.');
-
-    const toBlobURL = async (url, mimeType) => {
-      const resp = await fetch(url);
-      const blob = new Blob([await resp.blob()], { type: mimeType });
-      return URL.createObjectURL(blob);
-    };
-    const fetchFile = async (file) => {
-      const buf = await file.arrayBuffer();
-      return new Uint8Array(buf);
-    };
+    const ffmpegMod = await import('https://cdn.jsdelivr.net/npm/@ffmpeg/ffmpeg@0.12.10/+esm');
+    const utilMod = await import('https://cdn.jsdelivr.net/npm/@ffmpeg/util@0.12.1/+esm');
+    const { FFmpeg } = ffmpegMod;
+    const { toBlobURL, fetchFile } = utilMod;
 
     const ffmpeg = new FFmpeg();
     ffmpeg.on('progress', ({ progress })=>{
@@ -6012,10 +5999,18 @@ function loadExternalScript(url){
       }
     });
 
+    const coreBaseURL = 'https://cdn.jsdelivr.net/npm/@ffmpeg/core@0.12.10/dist/esm';
+    const ffmpegBaseURL = 'https://cdn.jsdelivr.net/npm/@ffmpeg/ffmpeg@0.12.10/dist/esm';
+
+    // Baixa o core E o worker interno da biblioteca como blob (mesma origem),
+    // em vez de deixar o navegador tentar criar um Worker cross-origin direto
+    // do CDN — é exatamente isso que causava o SecurityError.
     await ffmpeg.load({
-      coreURL: await toBlobURL(`${baseURLCore}/ffmpeg-core.js`, 'text/javascript'),
-      wasmURL: await toBlobURL(`${baseURLCore}/ffmpeg-core.wasm`, 'application/wasm'),
+      coreURL: await toBlobURL(`${coreBaseURL}/ffmpeg-core.js`, 'text/javascript'),
+      wasmURL: await toBlobURL(`${coreBaseURL}/ffmpeg-core.wasm`, 'application/wasm'),
+      classWorkerURL: await toBlobURL(`${ffmpegBaseURL}/worker.js`, 'text/javascript'),
     });
+
     ffmpegInstance = { ffmpeg, fetchFile };
     return ffmpegInstance;
   }
